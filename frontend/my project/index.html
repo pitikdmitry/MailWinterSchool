@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/main_page.css" />
+        <link rel="stylesheet" href="css/registration_form.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 
@@ -105,6 +106,41 @@
                         <h2 class="heading">Last games</h2>
                     </div>
                 </aside>
+                <!-- отступ от заголовка -->
+                <div style="clear: both"><br></div>
+                
+
+                <div class="registration-form">
+                    <form action="index.html" method="post">
+    
+                        <h1>Registration</h1>
+    
+                        <fieldset>
+                            <legend><span class="number">1</span>Your basic info</legend>
+                            <label for="nickname">Nickname:</label>
+                            <input type="text" id="nickname" name="nickname">
+    
+                            <label for="First-name">First name:</label>
+                            <input type="text" id="First-name" name="user_name">
+    
+                            <label for="surname">Surname:</label>
+                            <input type="text" id="Surname" name="user_name">
+    
+                            <label for="mail">Email:</label>
+                            <input type="email" id="mail" name="user_email">
+    
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="user_password">
+                        </fieldset>
+    
+                        <label>Interests:</label>
+                        <input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light" for="development">Development</label><br>
+                            <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">Design</label><br>
+                        <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">Business</label>
+                    
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
 
             </div>
         
@@ -159,41 +195,8 @@
                     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                     <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
                 </div>
-            </div>
-            <div class="registration-form">
-                <form action="index.html" method="post">
-
-                    <h1>Registration</h1>
-
-                    <fieldset>
-                        <legend><span class="number">1</span>Your basic info</legend>
-                        <label for="nickname">Nickname:</label>
-                        <input type="text" id="nickname" name="nickname">
-
-                        <label for="First-name">First name:</label>
-                        <input type="text" id="First-name" name="user_name">
-
-                        <label for="surname">Surname:</label>
-                        <input type="text" id="Surname" name="user_name">
-
-                        <label for="mail">Email:</label>
-                        <input type="email" id="mail" name="user_email">
-
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="user_password">
-                    </fieldset>
-
-                    <! <label>Interests:</label>
-                    <input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light" for="development">Development</label><br>
-                      <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">Design</label><br>
-                    <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">Business</label>
-                   -->
-                    <!-- </fieldset>
-                    <button type="submit">Sign Up</button>
-                </form>
-            </div>
-
-        </div> -->
+            </div> -->
+            
 
 
         <!-- SCRIPTS -->
