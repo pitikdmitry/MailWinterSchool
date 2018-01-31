@@ -7,8 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/main.css" />
-        <link rel="stylesheet" href="css/main_page.css" />
-        <link rel="stylesheet" href="css/registration_form.css" />
+        <link rel="stylesheet" href="css/players_page.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 
@@ -78,70 +77,24 @@
                     </div>
     
                 </header>
+
                 <!-- MAIN PART -->
                 
                 <div id="main">
-                    <div id="news">
-                        <h2 class="heading">
-                            IT news
-                        </h2>
-                        <!-- отступ от заголовка -->
-                        <div style="clear: both"><br></div>
-                        
-                        <div class="article">
-                            <img src="images/pic01.jpg" alt="News1" title="News1">
-                            <span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</span>
-                        </div>
-                        <a href="" title="See all">
-                            <div class="auth-btn">
-                                See all
-                            </div>
-                        </a>
+                    <h2 class="heading">Best players: </h2>
+                    <!-- отступ от заголовка -->
+                    <div style="clear: both"><br></div>
+                    <div id="player-position" class="player-info player-info-column-name">Position</div>
+                    <div id="player-nickname" class="player-info player-info-column-name">Nickname</div>
+                    <div id="player-rating" class="player-info player-info-column-name">Rating</div>
+                    <div id="player-team" class="player-info player-info-column-name">Team</div>
 
-                    </div>
-
+                    <div style="clear: both"><br></div>
+                    <div class="player-info">1</div>
+                    <div class="player-info">induk</div>
+                    <div class="player-info">100500</div>
+                    <div class="player-info">indku-team</div>
                 </div>
-                <aside>
-                    <div id="last-games">
-                        <h2 class="heading">Last games</h2>
-                    </div>
-                </aside>
-                <!-- отступ от заголовка -->
-                <div style="clear: both"><br></div>
-                
-
-                <div class="registration-form">
-                    <form action="index.html" method="post">
-    
-                        <h1>Registration</h1>
-    
-                        <fieldset>
-                            <legend><span class="number">1</span>Your basic info</legend>
-                            <label for="nickname">Nickname:</label>
-                            <input type="text" id="nickname" name="nickname">
-    
-                            <label for="First-name">First name:</label>
-                            <input type="text" id="First-name" name="user_name">
-    
-                            <label for="surname">Surname:</label>
-                            <input type="text" id="Surname" name="user_name">
-    
-                            <label for="mail">Email:</label>
-                            <input type="email" id="mail" name="user_email">
-    
-                            <label for="password">Password:</label>
-                            <input type="password" id="password" name="user_password">
-                        </fieldset>
-    
-                        <label>Interests:</label>
-                        <input type="checkbox" id="development" value="interest_development" name="user_interest"><label class="light" for="development">Development</label><br>
-                            <input type="checkbox" id="design" value="interest_design" name="user_interest"><label class="light" for="design">Design</label><br>
-                        <input type="checkbox" id="business" value="interest_business" name="user_interest"><label class="light" for="business">Business</label>
-                    
-                        <button type="submit">Sign Up</button>
-                    </form>
-                </div>
-
             </div>
         
             <footer>
@@ -166,37 +119,6 @@
             </footer>
 
         </div>
-
-            <!-- <nav>
-                
-                <ul class="navigation-list">
-                    <a href="https://vk.com/id339228633" class="logo">
-                      <img border="0" alt="W3Schools" src="images/logo.png" width="70" height="70">
-                    </a>
-                    <li class = "navigation-tools"><a href="home.html">Турниры</a></li>
-                    <li class = "navigation-tools"><a href="blog.html">Матчи</a></li>
-                    <li class = "navigation-tools"><a href="news.html">Команды</a></li>
-                    <li class = "navigation-tools"><a href="news.html">Игроки</a></li>
-                    <li class = "sign_in"><a href="home.html">Вход</a></li>
-                    <li class = "sign_in"><a href="blog.html">Регистрация</a></li>
-                </ul>
-            </nav>
-            <hr> -->
-
-        <!-- Banner -->
-        <!-- <div class="main_container">
-            <div class="w3-content w3-display-container" style="max-width:800px">
-                <img class="mySlides" src="images/pic01.jpg" style="width:100%">
-                <img class="mySlides" src="images/pic02.jpg" style="width:100%">
-                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-                </div>
-            </div> -->
-            
 
 
         <!-- SCRIPTS -->
