@@ -6,9 +6,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/main_styles.css" />
         <link rel="stylesheet" href="css/main_page.css" />
         <link rel="stylesheet" href="css/registration_form.css" />
+        <link rel="stylesheet" href="css/signIn_form.css" />
+        <link rel="stylesheet" href="css/player_profile.css" />
+        <link rel="stylesheet" href="css/players_page.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 
@@ -16,12 +19,6 @@
 	<body>
         <div class="background">
         </div>
-
-		<!-- Header
-			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">Hielo <span>by TEMPLATED</span></a></div>
-				<a href="#menu">Menu</a>
-			</header> -->
 
         <div id="wrapper">
             <div id="content">
@@ -48,12 +45,12 @@
                     </div>
                     
                     <div id="reg-auth">
-                        <a href="" title="Sign-In">
+                        <a href="#" title="Sign-In">
                             <div id="SignIn-button" class="auth-btn">
                                 Sign In
                             </div>
                         </a>
-                        <a href="" title="Registration">
+                        <a href="#" title="Registration">
                             <div id="Registration-button" class="auth-btn">
                                 Registration
                             </div>
@@ -79,42 +76,44 @@
     
                 </header>
                 <!-- MAIN PART -->
-                
-                <div id="main">
-                    <div id="news">
-                        <h2 class="heading">
-                            IT news
-                        </h2>
-                        <!-- отступ от заголовка -->
-                        <div style="clear: both"><br></div>
-                        
-                        <div class="article">
-                            <img src="images/pic01.jpg" alt="News1" title="News1">
-                            <span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</span>
-                        </div>
-                        <a href="" title="See all">
-                            <div class="auth-btn">
-                                See all
+                <div id="main_page">
+                    <div id="main">
+                        <div id="news">
+                            <h2 class="heading">
+                                IT news
+                            </h2>
+                            <!-- отступ от заголовка -->
+                            <div style="clear: both"><br></div>
+
+                            <div class="article">
+                                <img src="images/pic01.jpg" alt="News1" title="News1">
+                                <span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</span>
                             </div>
-                        </a>
+                            <a href="" title="See all">
+                                <div class="auth-btn">
+                                    See all
+                                </div>
+                            </a>
+
+                        </div>
 
                     </div>
-
+                    <aside>
+                        <div id="last-games">
+                            <h2 class="heading">Last games</h2>
+                        </div>
+                    </aside>
                 </div>
-                <aside>
-                    <div id="last-games">
-                        <h2 class="heading">Last games</h2>
-                    </div>
-                </aside>
                 <!-- отступ от заголовка -->
                 <div style="clear: both"><br></div>
                 
-
-                <div class="registration-form">
+                <!--REGISTRATION-->
+                <div id="registration-form" hidden>
                     <form action="index.html" method="post">
     
-                        <h1>Registration</h1>
-    
+                        <h2 class="heading">Registration</h2>
+                        <!--&lt;!&ndash; отступ от заголовка &ndash;&gt;-->
+                        <div style="clear: both"><br></div>
                         <fieldset>
                             <legend><span class="number">1</span>Your basic info</legend>
                             <label for="nickname">Nickname:</label>
@@ -142,7 +141,86 @@
                     </form>
                 </div>
 
+                <!--SIGN IN-->
+                <div id="signIn-form" hidden>
+                    <form action="index.html" method="post">
+
+                        <h2 class="heading">Log In</h2>
+                        <!--&lt;!&ndash; отступ от заголовка &ndash;&gt;-->
+                        <div style="clear: both"><br></div>
+                        <fieldset>
+                            <label for="nickname">Nickname or email:</label>
+                            <input type="text" id="nickname_or_email" name="nickname_or_email">
+
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="user_password">
+                        </fieldset>
+
+                        <button type="submit">Log In</button>
+                    </form>
+                </div>
+
+                <!--PLAYER PROFILE-->
+                <div id="player-profile" hidden>
+                    <div id="profile-left">
+                        <div id="left-part">
+                            <h2 class="heading">
+                                Profile:
+                            </h2>
+                            <!-- отступ от заголовка -->
+                            <div style="clear: both"><br></div>
+
+                            <div class="avatar">
+                                <img src="images/pic01.jpg" alt="News1" title="News1">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="profile-right">
+                        <div id="person-info">
+                            <h2 class="heading">General information:</h2>
+                            <!-- отступ от заголовка -->
+                            <div style="clear: both"><br></div>
+                            <div id="info-name" class="info">
+                                <p>Nickname:</p>
+                                <p>First name:</p>
+                                <p>Surname:</p>
+                                <p>Email:</p>
+                                <p>Password:</p>
+                            </div>
+                            <div id="info-value" class="info">
+                                <p>nickname</p>
+                                <p>name</p>
+                                <p>surname</p>
+                                <p>email</p>
+                                <p>pass</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--PLAYERS RATING-->
+
+                <div id="players-rating-main" hidden>
+                    <h2 class="heading">Best players: </h2>
+                    <!-- отступ от заголовка -->
+                    <div style="clear: both"><br></div>
+                    <div id="player-position" class="player-info player-info-column-name">Position</div>
+                    <div id="player-nickname" class="player-info player-info-column-name">Nickname</div>
+                    <div id="player-rating" class="player-info player-info-column-name">Rating</div>
+                    <div id="player-team" class="player-info player-info-column-name">Team</div>
+
+                    <div style="clear: both"><br></div>
+                    <div class="player-info">1</div>
+                    <div class="player-info">induk</div>
+                    <div class="player-info">100500</div>
+                    <div class="player-info">indku-team</div>
+                </div>
+
             </div>
+
+            <!--FOOTER-->
         
             <footer>
                 <div id="site-name">

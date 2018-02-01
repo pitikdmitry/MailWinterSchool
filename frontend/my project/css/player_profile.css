@@ -1,34 +1,18 @@
-#main {
+#profile-left {
     width: 20%;
     float: left;
     margin-top: 20px;
     margin-left: 15%;
 }
 
-aside {
+#profile-right {
     width: 50%;
     float: left;
     margin-left: 2%;
     margin-top: 20px;
 }
 
-.heading {
-    font-weight: lighter;
-    font-size: 1.4em;
-    font-family: 'Sedgwick Ave', cursive;
-    border-bottom: 2px solid #db6e6e;
-    float: left; 
-    /* float в данном случае укорачивает линии */
-
-    color: #462f2f;
-    padding: 0px 5px;
-}
-
-.heading:first-letter {
-    color: #db6e6e;
-}
-
-.article {
+.avatar {
     width: 100%;
     float: left;
     margin-right: 10%;
@@ -38,7 +22,7 @@ aside {
     box-sizing: border-box; 
 }
 
-.article>img {
+.avatar>img {
     border-radius: 5px 5px 5px 5px;
     width: 200px;
     height: 200px;

@@ -1,4 +1,4 @@
-#main {
+#players-rating-main {
     width: 60%;
     float: left;
     margin-top: 20px;
@@ -6,22 +6,6 @@
     border-top: 3px #db6e6e;
     border-left: 3px #db6e6e;
     /* border-width: 5px; */
-}
-
-.heading {
-    font-weight: lighter;
-    font-size: 1.4em;
-    font-family: 'Sedgwick Ave', cursive;
-    border-bottom: 2px solid #db6e6e;
-    float: left; 
-    /* float в данном случае укорачивает линии */
-
-    color: #462f2f;
-    padding: 0px 5px;
-}
-
-.heading:first-letter {
-    color: #db6e6e;
 }
 
 .player-info {
