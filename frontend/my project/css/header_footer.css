@@ -1,0 +1,266 @@
+
+header {
+    float: left;
+    background-color: transparent;
+    width: 99.4%;
+    color: white;
+    border-bottom: 1px solid silver;
+}
+
+header>div#logo>a>img {
+    /* для logo */
+    width: 45px;
+    height: 45px;
+    float: left;
+}
+
+header>div#logo>a>span {
+    color: #fa713e;
+    font-size: 2.2em;
+    margin-left: 10px;
+    /* font-family: 'Suez One', serif; */
+    font-family: 'Sedgwick Ave', cursive;
+}
+
+/* Нужно будет адаптирвоатьпод разные экраны */
+@media (min-width: 1000px) {
+    header>div#logo>a>img {
+        /* для logo */
+        margin-left: 5%;
+    }
+
+    #logo {
+        float: left;
+        width: 30%;
+    }
+    
+    #navigation {
+        float: left;
+        width: 37%;
+    }
+    
+    #reg-auth {
+        float: right;
+        width: 30%;
+    }
+}
+
+@media (max-width: 999px) and (min-width: 550px) {
+    header>div#logo>a>img {
+        /* для logo */
+        margin-left: 5%;
+    }
+
+    #logo {
+        float: left;
+        width: 50%;
+    }
+    
+    #navigation {
+        visibility: hidden;
+        display: none;
+    }
+    
+    #reg-auth {
+        float: right;
+        width: 40%;
+    }
+}
+@media (max-width: 549px) {
+    header>div#logo>a>img {
+        /* для logo */
+        margin-left: 5%;
+    }
+
+    #logo {
+        float: left;
+        width: 75%;
+    }
+    
+    #navigation {
+        visibility: hidden;
+        display: none;
+    }
+    
+    #reg-auth {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/* Нужно будет адаптирвоатьпод разные экраны */
+
+#navigation {
+    text-align: center;
+    font-family: 'Sedgwick Ave', cursive;
+    font-size: 1.4em;
+    padding-top: 10px;
+}
+
+#navigation>a:hover {
+    border-bottom: 1px solid silver;
+}
+
+#navigation>a:last-child {
+    /* margin-left: 10%; */
+}
+
+#navigation>a {
+    margin-left: 5%;
+}
+
+#reg-auth>a>div.auth-btn {
+    float: right;
+    margin-right: 3%;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 5px 9px;
+    font-size: 1.2em;
+    /* background-color: ; */
+    border-bottom: 4px solid silver;
+    font-family: 'Sedgwick Ave', cursive;
+}
+
+#reg-auth>a:hover>div.auth-btn {
+    border-bottom: 2px solid silver;
+    margin-top: 7px;
+}
+
+#reg-auth>a:active>div.auth-btn {
+    border-bottom: 0px;
+    margin-top: 9px;
+}
+
+#menuShow {
+    /* display: inline; */
+    font-size: 1.4em;
+    margin-left: 20px;
+    float: left;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#clear-navigation {
+    clear: both;
+}
+
+#mobileMenu, #mobileMenuWithoutReg {
+    font-family: 'Sedgwick Ave', cursive;
+    font-size: 1.3em;
+    padding-top: 20px;
+    display: none;
+    width: 97%;
+    float: left;
+    margin-left: 3%;
+}
+
+#mobileMenu a, #mobileMenuWithoutReg a {
+    /* padding-top: 20px; */
+    margin-top: 20%;
+}
+
+@media (min-width: 1000px) {
+    #menuShow {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 784px) {
+    #navigation {
+        display: none;
+        visibility: hidden;
+    }
+}
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#content {
+    flex: 1 0 auto;
+}
+
+footer {
+    float: left;
+    background-color: transparent;
+    width: 98%;
+    padding: 1%;
+    border-top: 1px solid silver;
+    font-family: 'Sedgwick Ave', cursive;
+}
+
+#site-name {
+    margin-right: 5%;
+    font-size: 1.2em;
+    float: right;
+    color: #fa713e;
+}
+
+@media (max-width: 1080) {
+    #clear {
+        clear: both;
+    }
+}
+
+#clear {
+    clear: both;
+}
+
+#footer-menu {
+    font-size: 1.2 em;
+}
+
+#footer-menu>a {
+    color: #fa713e;
+    margin-left: 2%;
+}
+
+#footer-menu>a:hover, #rights>a:hover {
+    border-bottom: 1px solid silver;
+}
+
+#rights {
+    float: left;
+    margin-left: 5%;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+#social {
+    float: right;
+    width: 40%;
+    margin-right: 4%;
+    margin-top: 5px; 
+}
+
+#social>a {
+    float: right;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: rgba(217, 91, 72, 1);
+    margin-left: 2%;
+    width: 30px;
+    height: 30px;
+    
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.2em;
+}
+
+#social>a:hover {
+    background: #c34f25;
+    opacity: 0.6;
+}
+
+@media (max-width: 400px) {
+    #site-name {
+        display: none;
+    } 
+    #social {
+        width: 100%;
+    }
+}

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-#registration-form form {
+form {
   max-width: 300px;
   margin: 10px auto;
   padding: 10px 20px;
@@ -45,13 +45,13 @@ input[type="checkbox"] {
   margin: 0 4px 8px 0;
 }
 
-#registration-form select {
+form select {
   padding: 6px;
   height: 32px;
   border-radius: 2px;
 }
 
-#registration-form button {
+form button {
   padding: 19px 39px 18px 39px;
   color: #FFF;
   background-color: #4bc970;
@@ -66,22 +66,22 @@ input[type="checkbox"] {
   margin-bottom: 10px;
 }
 
-#registration-form fieldset {
+form fieldset {
   margin-bottom: 30px;
   border: none;
 }
 
-#registration-form legend {
+form legend {
   font-size: 1.4em;
   margin-bottom: 10px;
 }
 
-#registration-form label {
+form label {
   display: block;
   margin-bottom: 8px;
 }
 
-#registration-form label.light {
+form label.light {
   font-weight: 300;
   display: inline;
 }
@@ -102,7 +102,7 @@ input[type="checkbox"] {
 
 @media screen and (min-width: 480px) {
 
-  #registration-form form {
+  form {
     max-width: 480px;
   }
 

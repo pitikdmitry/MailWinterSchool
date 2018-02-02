@@ -1,0 +1,2 @@
+const http = window.Http;
+
