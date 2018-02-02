@@ -12,9 +12,10 @@
 
 		update(users = []) {
 			this.clear();
-
+			debugger;
 			this.el.innerHTML = ScoreboardTemplate({users});
-		}
+            debugger;
+        }
 	}
 
 	window.Scoreboard = Scoreboard;

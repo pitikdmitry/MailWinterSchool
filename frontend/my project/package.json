@@ -4,8 +4,8 @@
   "description": "My project",
   "main": "main.js",
   "scripts": {
-    "start": "npm run compile-pug && node server/index.js",
-    "compile-pug": "pug -c --extension 'pug.js' --name-after-file ./public/blocks/"
+    "start": "npm run compile-pug",
+    "compile-pug": "pug -c --extension 'pug.js' --name-after-file ./js/blocks/scoreboard/"
   },
   "engines": {
     "node": ">=8.0"

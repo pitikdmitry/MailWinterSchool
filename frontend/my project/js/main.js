@@ -3,6 +3,7 @@ const Block = window.Block;
 const Scoreboard = window.Scoreboard;
 
 const sections = {
+    app: new Block(document.getElementById('app')),
     mainSection: new Block(document.getElementById('main_page')),
     registrationSection: new Block(document.getElementById('registration')),
     signInSection: new Block(document.getElementById('signIn')),
@@ -11,6 +12,7 @@ const sections = {
     playersRating: Block.Create('section', {}, ['playersRating-section']),
 };
 
+sections.app.append(sections.playersRating);
 // preload
 hideAllSections();
 sections.mainSection.show();
@@ -68,24 +70,23 @@ function openTeams() {
 // }
 
 function openPlayers() {
-    // if (!sections.scores.ready) {
+    if (!sections.playersRating.ready) {
         sections.playersRating.scoreboard = new Scoreboard();
         sections.playersRating
             .append(Block.Create('h2', {}, [], 'Список лидеров'))
             .append(sections.playersRating.scoreboard);
-        // sections.scores.ready = true;
-    // }
+        sections.playersRating.ready = true;
+    }
     hideAllSections();
 
-    const users = {
-            nickname: 'a.ostapenko@corp.mail.ru',
-            team: 'password',
-            rating: 20,
-            position: 72,
-
-    };
-
+    const users = [{
+        nickname: 'a.ostapenko@corp.mail.ru',
+        team: 'password',
+        rating: 20,
+        position: 72
+    }];
     sections.playersRating.scoreboard.update(users);
+    sections.app.show();
     sections.playersRating.show();
 }
 

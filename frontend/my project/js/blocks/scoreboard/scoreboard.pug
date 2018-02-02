@@ -6,17 +6,9 @@ thead
         th Team
 
 tbody
-    each player in players
+    each user in users
         tr
-            th #{player.position}
-            th #{player.nickname}
-            th #{player.rating}
-            th #{player.team}
-
-//h2(class)
-//div#player-position(class="player-info player-info-column-name") Position
-//div#player-nickname(class="player-info player-info-column-name") Nickname
-//div#player-rating(class="player-info player-info-column-name") Rating
-//div#player-team(class="player-info player-info-column-name") Team
-//
-//
+            th #{user.position}
+            th #{user.nickname}
+            th #{user.rating}
+            th #{user.team}
