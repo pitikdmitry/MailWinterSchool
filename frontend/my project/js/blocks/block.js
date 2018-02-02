@@ -56,14 +56,16 @@
          * Скрывает блок
          */
         hide() {
-            this.el.setAttribute('hidden', 'hidden');
+            // this.el.setAttribute('hidden', 'hidden');
+            this.el.style.display = 'none';
         }
 
         /**
          * Отображает блок
          */
         show() {
-            this.el.removeAttribute('hidden');
+            // this.el.removeAttribute('hidden');
+            this.el.style.display = 'block';
         }
 
         /**
