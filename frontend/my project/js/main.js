@@ -82,7 +82,7 @@ function openPlayers() {
             team: 'password',
             rating: 20,
             position: 72,
-        
+
     };
 
     sections.playersRating.scoreboard.update(users);
