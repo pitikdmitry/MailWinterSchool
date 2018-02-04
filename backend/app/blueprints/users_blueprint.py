@@ -1,4 +1,5 @@
-from flask import Blueprint, request, make_response, jsonify
+from flask import Blueprint, request, make_response, jsonify, json
+from flask_cors import CORS, cross_origin
 
 from app.repositories.users_repository import UsersRepository
 
@@ -7,10 +8,17 @@ users_repository = UsersRepository()
 
 
 @users_blueprint.route('/create', methods=['POST'])
+@cross_origin()
 def create():
     content = request.get_json(silent=True)
+    # content2 = request.get_json()
+    # s = json.dumps(variables)
+    bytes_data = request.data
+    data = json.loads(bytes_data)
+    if 'about' not in data:
+        data['about'] = ""
 
-    status_code = users_repository.create(content)
+    status_code = users_repository.create(data)
     return make_response("", status_code)
 
 

@@ -117,7 +117,7 @@
 
         <!--REGISTRATION-->
         <section id="registration">
-            <form action="index.html" method="post">
+            <form id="registration-form" action="index.html" method="post">
 
                 <h2 class="heading">Registration</h2>
                 <!--&lt;!&ndash; отступ от заголовка &ndash;&gt;-->
@@ -128,16 +128,16 @@
                     <input type="text" id="nickname" name="nickname">
 
                     <label for="First-name">First name:</label>
-                    <input type="text" id="First-name" name="user_name">
+                    <input type="text" id="First-name" name="first_name">
 
                     <label for="surname">Surname:</label>
-                    <input type="text" id="Surname" name="user_name">
+                    <input type="text" id="Surname" name="surname">
 
                     <label for="mail">Email:</label>
-                    <input type="email" id="mail" name="user_email">
+                    <input type="email" id="mail" name="email">
 
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="user_password">
+                    <label for="password-reg">Password:</label>
+                    <input type="password" id="password-reg" name="password">
                 </fieldset>
 
                 <label>Interests:</label>
@@ -151,7 +151,7 @@
 
         <!--SIGN IN-->
         <section id="signIn">
-            <form action="index.html" method="post">
+            <form id="signIn-form" action="index.html" method="post">
 
                 <h2 class="heading">Log In</h2>
                 <!--&lt;!&ndash; отступ от заголовка &ndash;&gt;-->
@@ -160,8 +160,8 @@
                     <label for="nickname">Nickname or email:</label>
                     <input type="text" id="nickname_or_email" name="nickname_or_email">
 
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="user_password">
+                    <label for="password-signIn">Password:</label>
+                    <input type="password" id="password-signIn" name="user_password">
                 </fieldset>
 
                 <button type="submit">Log In</button>
@@ -260,10 +260,12 @@
 <!-- <script src="js/main_menu_scroll.js"></script> -->
 <!--<script src="js/main_page.js"></script>-->
 <script src="js/blocks/block/block.js"></script>
+<script src="js/blocks/form/form.js"></script>
 <script src="js/blocks/scoreboard/scoreboard.pug.js"></script>
 <script src="js/blocks/scoreboard/index.js"></script>
 <!--<script src="js/openFunctions.js"></script>-->
 <script src="js/modules/http.js"></script>
+<script src="js/services/user-service.js"></script>
 <script src="js/main.js"></script>
 
 <!-- jQuery -->

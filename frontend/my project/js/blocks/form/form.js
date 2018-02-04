@@ -4,25 +4,20 @@
     const Block = window.Block;
 
     class Form extends Block {
-        constructor(fields = []) {
-            const el = document.createElement('form');
+        constructor(el) {
             super(el);
-
-            fields.forEach(function (field) {
-                const f = Block.Create('input', field.attrs || {}, field.classes || []);
-                this.append(f);
-            }.bind(this));
         }
 
         onSubmit(callback) {
             this.el.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const formdata = {};
-                const elements = this.el.elements;
-                for (let name in elements) {
-                    formdata[name] = elements[name].value;
-                }
+                const elements = this.el.getElementsByTagName('input');
 
+                for (let i = 0; i < elements.length; i++) {
+                    let input = elements[i];
+                    formdata[input.name] = input.value;
+                }
                 callback(formdata);
             }.bind(this));
         }

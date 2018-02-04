@@ -18,6 +18,7 @@ class UsersRepository:
 
     def create(self, content) -> int:
         connect, cursor = self._data_context.create_connection()
+        print(content['nickname'])
 
         sql = "INSERT INTO users (nickname, first_name, surname, about, email, password) VALUES (%s, %s, %s, %s, %s, %s);"
         try:
@@ -27,7 +28,8 @@ class UsersRepository:
             cursor.close()
             return STATUS_CODE['OK']
 
-        except BaseException:
+        except BaseException as e:
+            print(e)
             cursor.close()
             return STATUS_CODE['CONFLICT']
 

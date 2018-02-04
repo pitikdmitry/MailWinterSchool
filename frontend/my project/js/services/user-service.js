@@ -20,8 +20,9 @@
          * @param {number} age
          * @param {Function} callback
          */
-        signup(email, password, age, callback) {
-            Http.Post('/signup', {email, password, age}, callback);
+        register(formdata, callback) {
+            Http.PostCORS('/users/create', formdata, callback);
+            // Http.FetchPost('/users/create', formdata);
         }
 
         /**

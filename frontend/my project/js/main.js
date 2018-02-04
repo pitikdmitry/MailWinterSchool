@@ -1,21 +1,23 @@
 const http = window.Http;
 const Block = window.Block;
+const Form = window.Form;
 const Scoreboard = window.Scoreboard;
+const UserService = window.UserService;
+
+const userService = new UserService();
 
 const sections = {
     app: new Block(document.getElementById('app')),
     mainSection: new Block(document.getElementById('main_page')),
-    registrationSection: new Block(document.getElementById('registration')),
-    signInSection: new Block(document.getElementById('signIn')),
     playerProfileSection: new Block(document.getElementById('player-profile')),
-    // playersRatingSection: new Block(document.getElementById('players-rating'))
-    playersRating: Block.Create('section', {}, ['playersRating-section']),
+    playersRating: Block.Create('section', {}, ['playersRating-section'])
 };
-
 sections.app.append(sections.playersRating);
-// preload
-hideAllSections();
-sections.mainSection.show();
+
+const forms = {
+    registrationForm: new Form(document.getElementById('registration-form')),
+    signInForm: new Form(document.getElementById('signIn-form'))
+};
 
 // navigation buttons for big screen
 const bigScreenButtons = {
@@ -35,6 +37,8 @@ const smallScreenAlButtons = {
 };
 // navigation buttons for small screen Small Menu
 
+// preload
+openMenu();
 
 bigScreenButtons.registrationButton.on('click', openRegistration);
 bigScreenButtons.signInButton.on('click', openSignIn);
@@ -44,13 +48,40 @@ bigScreenButtons.teamsButton.on('click', openTeams);
 bigScreenButtons.playersButton.on('click', openPlayers);
 
 function openRegistration() {
+    forms.registrationForm.onSubmit(function(formdata) {
+        userService.register(formdata, function (err, resp) {
+            debugger;
+            alert('in callback');
+            if (err) {
+                alert(`Some error ${err.status}: ${err.responseText}`);
+                return;
+            }
+
+            forms.registrationForm.reset();
+            userService.getData(function (err, resp) {
+                if (err) {
+                    return;
+                }
+                openMenu();
+            }, true);
+        });
+    }.bind(this));
+
     hideAllSections();
-    sections.registrationSection.show();
+    if (userService.isLoggedIn()) {
+        return openMenu();
+    }
+    forms.registrationForm.show();
+}
+
+function openMenu() {
+    hideAllSections();
+    sections.mainSection.show();
 }
 
 function openSignIn() {
     hideAllSections();
-    sections.signInSection.show();
+    forms.signInForm.show();
 }
 
 function openTournaments() {
@@ -86,16 +117,16 @@ function openPlayers() {
         position: 72
     }];
     sections.playersRating.scoreboard.update(users);
-    sections.app.show();
     sections.playersRating.show();
 }
-
-
-
 
 function hideAllSections() {
 
     for (let [key, value] of Object.entries(sections)) {
         sections[key].hide();
     }
+    for (let [key, value] of Object.entries(forms)) {
+        forms[key].hide();
+    }
+    sections.app.show();
 }
