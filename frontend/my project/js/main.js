@@ -50,7 +50,6 @@ bigScreenButtons.playersButton.on('click', openPlayers);
 function openRegistration() {
     forms.registrationForm.onSubmit(function(formdata) {
         userService.register(formdata, function (err, resp) {
-            debugger;
             alert('in callback');
             if (err) {
                 alert(`Some error ${err.status}: ${err.responseText}`);

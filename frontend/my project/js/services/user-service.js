@@ -11,6 +11,7 @@
         constructor() {
             this.user = null;
             this.users = [];
+            this.nickname = null;
         }
 
         /**
@@ -23,6 +24,7 @@
         register(formdata, callback) {
             Http.PostCORS('/users/create', formdata, callback);
             // Http.FetchPost('/users/create', formdata);
+            this.nickname = formdata['nickname'];
         }
 
         /**
@@ -53,12 +55,14 @@
                 return callback(null, this.user);
             }
 
-            Http.Get('/me', function (err, userdata) {
+            Http.GetCORS('/users/' + this.nickname + '/profile', function (err, userdata) {
                 if (err) {
                     return callback(err, userdata);
                 }
-
-                this.user = userdata;
+                debugger;
+                this.user = new User(userdata['nickname'], userdata['first_name'], userdata['surname'],
+                    userdata['about'], userdata['email'], userdata['password']);
+                this.nickname = userdata['nickname'];
                 callback(null, userdata);
             }.bind(this));
         }

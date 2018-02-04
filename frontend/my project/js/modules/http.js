@@ -54,6 +54,34 @@
         //     debugger;
         //     xhr.send(JSON.stringify(body));
         // }
+        static GetCORS(address, callback) {
+            let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+
+            let xhr = new XHR();
+            xhr.open('GET', Http.BaseUrl + address, true);
+            // xhr.withCredentials = true;
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
+
+            xhr.onload = function() {
+
+                let response = null;
+                try {
+                    debugger;
+                    response = JSON.parse(xhr.responseText);
+                } catch (err) {
+
+                }
+                callback(null, response);
+                // alert( this.responseText );
+            };
+
+            xhr.onerror = function() {
+                return callback(xhr, null);
+                // alert( 'Ошибка ' + this.status );
+            };
+
+            xhr.send();
+        }
 
         static PostCORS(address, body, callback) {
             let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
