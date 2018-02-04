@@ -1,6 +1,7 @@
 const http = window.Http;
 const Block = window.Block;
 const Form = window.Form;
+const NavBar = window.NavBar;
 const Scoreboard = window.Scoreboard;
 const UserService = window.UserService;
 
@@ -12,6 +13,7 @@ const sections = {
     playerProfileSection: new Block(document.getElementById('player-profile')),
     playersRating: Block.Create('section', {}, ['playersRating-section'])
 };
+const navBar = new NavBar(document.getElementById('header'), 'reg-auth', 'profile-nav');
 sections.app.append(sections.playersRating);
 
 const forms = {
@@ -57,10 +59,12 @@ function openRegistration() {
             }
 
             forms.registrationForm.reset();
+
             userService.getData(function (err, resp) {
                 if (err) {
                     return;
                 }
+                navBar.onLogin();
                 openMenu();
             }, true);
         });
@@ -122,6 +126,7 @@ function openPlayers() {
 function hideAllSections() {
 
     for (let [key, value] of Object.entries(sections)) {
+
         sections[key].hide();
     }
     for (let [key, value] of Object.entries(forms)) {
