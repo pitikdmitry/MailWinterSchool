@@ -22,6 +22,10 @@ header>div#logo>a>span {
     font-family: 'Sedgwick Ave', cursive;
 }
 
+header #profile-nav {
+    float: right;
+}
+
 /* Нужно будет адаптирвоатьпод разные экраны */
 @media (min-width: 1000px) {
     header>div#logo>a>img {

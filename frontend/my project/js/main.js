@@ -41,6 +41,9 @@ const smallScreenAlButtons = {
 
 // preload
 openMenu();
+// navBar.onLogout();
+navBar.onLogin();
+
 
 bigScreenButtons.registrationButton.on('click', openRegistration);
 bigScreenButtons.signInButton.on('click', openSignIn);
