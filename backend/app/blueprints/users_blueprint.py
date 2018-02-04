@@ -7,14 +7,15 @@ users_repository = UsersRepository()
 
 
 @users_blueprint.route('/create', methods=['POST'])
-def create_user():
+def create():
     content = request.get_json(silent=True)
 
-    status_code = users_repository.create_user(content)
-    return make_response('good', status_code)
+    status_code = users_repository.create(content)
+    return make_response("", status_code)
 
 
-@users_blueprint.route('/test', methods=['GET'])
-def test_send():
+@users_blueprint.route('/<nickname>/profile', methods=['GET'])
+def get_by_id(nickname: str):
 
-    return make_response('hello world')
+    user, status_code = users_repository.get_by_id(nickname)
+    return make_response(jsonify(user), status_code)

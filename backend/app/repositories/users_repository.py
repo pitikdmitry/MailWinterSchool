@@ -1,3 +1,5 @@
+from typing import Tuple
+
 from app.connect_db import PostgresDataContext
 
 STATUS_CODE = {
@@ -14,18 +16,34 @@ class UsersRepository:
         self._data_context = PostgresDataContext()
         pass
 
-    def create_user(self, content) -> int:
+    def create(self, content) -> int:
         connect, cursor = self._data_context.create_connection()
 
         sql = "INSERT INTO users (nickname, first_name, surname, about, email, password) VALUES (%s, %s, %s, %s, %s, %s);"
         try:
-            cursor.execute(sql,
-                           [content['nickname'], content['first_name'], content['surname'], content['about'],
+            cursor.execute(sql, [content['nickname'], content['first_name'], content['surname'], content['about'],
                             content['email'], content['password']])
-            self._data_context.put_connection(connect)
+
             cursor.close()
             return STATUS_CODE['OK']
 
         except BaseException:
             cursor.close()
             return STATUS_CODE['CONFLICT']
+
+    def get_by_id(self, nickname: str) -> Tuple:
+        connect, cursor = self._data_context.create_connection()
+
+        sql = "SELECT nickname, first_name, surname, about, email, password FROM users WHERE nickname=%s;"
+        try:
+            cursor.execute(sql, [nickname, ])
+            self._data_context.put_connection(connect)
+
+            user = cursor.fetchone()
+            cursor.close()
+
+            return user, STATUS_CODE['OK']
+
+        except BaseException as e:
+            cursor.close()
+            return None, STATUS_CODE['CONFLICT']
