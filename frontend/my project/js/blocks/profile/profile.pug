@@ -1,0 +1,25 @@
+div#profile-left
+    div#left-part
+        h2(class="heading") Profile
+        div(style="clear: both")
+        div(class="avatar")
+
+div#profile-right
+    div#person-info
+        h2(class="heading") General information:
+        div(style="clear: both")
+        div#info-name(class="info")
+            p Nickname:
+            p First name:
+            p Surname:
+            p About:
+            p Email:
+            p Password:
+
+        div#info-value(class="info")
+            p #{user.nickname}
+            p #{user.firstName}
+            p #{user.surname}
+            p #{user.about}
+            p #{user.email}
+            p #{user.password}

@@ -1,6 +1,7 @@
 const http = window.Http;
 const Block = window.Block;
 const Form = window.Form;
+const Profile = window.Profile;
 const NavBar = window.NavBar;
 const Scoreboard = window.Scoreboard;
 const UserService = window.UserService;
@@ -11,10 +12,12 @@ const sections = {
     app: new Block(document.getElementById('app')),
     mainSection: new Block(document.getElementById('main_page')),
     playerProfileSection: new Block(document.getElementById('player-profile')),
-    playersRating: Block.Create('section', {}, ['playersRating-section'])
+    playersRating: Block.Create('section', {}, ['playersRating-section']),
+    playersProfile: Block.Create('section', {}, ['playersProfile-section'])
 };
 const navBar = new NavBar(document.getElementById('header'), 'reg-auth', 'profile-nav');
 sections.app.append(sections.playersRating);
+sections.app.append(sections.playersProfile);
 
 const forms = {
     registrationForm: new Form(document.getElementById('registration-form')),
