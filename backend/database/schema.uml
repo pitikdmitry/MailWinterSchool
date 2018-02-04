@@ -1,0 +1,46 @@
+@startuml
+
+player: player_id [INT]
+player: nickname [TEXT]
+player: first_name [TEXT]
+player: surname [TEXT]
+player: about [TEXT]
+player: email [TEXT]
+player: password [TEXT]
+player: country [TEXT]
+
+player: stats_id [INT]
+player: team_id [INT]
+player --> stats
+player --> team
+
+stats: stats_id [INT]
+stats: kills [INT]
+stats: deaths [INT]
+stats: games_win [INT]
+stats: games_lose [INT]
+stats: games_draw [INT]
+
+team: team_id [INT]
+team: title [TEXT]
+team: games_win [INT]
+team: games_lose [INT]
+team: games_draw [INT]
+team: country [TEXT]
+
+game: game_id [INT]
+game: team_1_id [INT]
+game: team_2_id [INT]
+game: points_1 [INT]
+game: points_2 [INT]
+game --> team: team1
+game --> team: team2
+
+tournament: tournament_id [INT]
+tournament: title [TEXT]
+tournament: date_starts [DATETIME]
+tournament: date_ends [DATETIME]
+tournament: teams []
+tournament --> team: arrayof teams in tourn
+
+@enduml

@@ -1,6 +1,10 @@
 CREATE TABLE users
 (
-    user_id serial primary key,
-    fullname TEXT NOT NULL,
-    about TEXT NOT NULL
+    id serial primary key,
+    nickname TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    surname TEXT NOT NULL,
+    about TEXT NOT NULL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL
 );
