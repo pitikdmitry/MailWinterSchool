@@ -5,7 +5,9 @@
     const ProfileTemplate = window.profileTemplate;
 
     class Profile extends Block {
-        constructor(el) {
+        constructor() {
+            const el = document.createElement('div');
+            el.setAttribute("id", "profile-left");
             super(el);
         }
 

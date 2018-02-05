@@ -109,6 +109,26 @@ function openTeams() {
 //     hideAllSections();
 // }
 
+function openProfile() {
+    if (!sections.playersProfile.ready) {
+        sections.playersRating.profileDiv = new Profile();
+        sections.playersRating
+            .append(Block.Create('h2', {}, [], 'Список лидеров'))
+            .append(sections.playersRating.scoreboard);
+        sections.playersRating.ready = true;
+    }
+    hideAllSections();
+
+    const users = [{
+        nickname: 'a.ostapenko@corp.mail.ru',
+        team: 'password',
+        rating: 20,
+        position: 72
+    }];
+    sections.playersRating.scoreboard.update(users);
+    sections.playersRating.show();
+}
+
 function openPlayers() {
     if (!sections.playersRating.ready) {
         sections.playersRating.scoreboard = new Scoreboard();
