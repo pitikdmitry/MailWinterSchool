@@ -1,9 +1,16 @@
+.title {
+    font-size: 3em;
+    color: #FFFFFF;
+    /*font-family: Oswald, sans-serif;*/
+    font-family: 'Berkshire Swash', cursive;
+    text-shadow: 0px 1px 1px #0C1114;
+}
 
 header {
     float: left;
-    background-color: transparent;
-    width: 99.4%;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    /*width: 99.4%;*/
+    width: 100%;
     border-bottom: 1px solid silver;
 }
 
@@ -12,14 +19,6 @@ header>div#logo>a>img {
     width: 45px;
     height: 45px;
     float: left;
-}
-
-header>div#logo>a>span {
-    color: #fa713e;
-    font-size: 2.2em;
-    margin-left: 10px;
-    /* font-family: 'Suez One', serif; */
-    font-family: 'Sedgwick Ave', cursive;
 }
 
 header #profile-nav {
@@ -96,17 +95,12 @@ header #profile-nav {
 
 #navigation {
     text-align: center;
-    font-family: 'Sedgwick Ave', cursive;
     font-size: 1.4em;
     padding-top: 10px;
 }
 
 #navigation>a:hover {
     border-bottom: 1px solid silver;
-}
-
-#navigation>a:last-child {
-    /* margin-left: 10%; */
 }
 
 #navigation>a {
@@ -122,7 +116,6 @@ header #profile-nav {
     font-size: 1.2em;
     /* background-color: ; */
     border-bottom: 4px solid silver;
-    font-family: 'Sedgwick Ave', cursive;
 }
 
 #reg-auth>a:hover>div.auth-btn {
@@ -149,7 +142,6 @@ header #profile-nav {
 }
 
 #mobileMenu, #mobileMenuWithoutReg {
-    font-family: 'Sedgwick Ave', cursive;
     font-size: 1.3em;
     padding-top: 20px;
     display: none;
@@ -188,21 +180,20 @@ header #profile-nav {
 
 footer {
     float: left;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.2);
     width: 98%;
     padding: 1%;
     border-top: 1px solid silver;
-    font-family: 'Sedgwick Ave', cursive;
 }
 
 #site-name {
     margin-right: 5%;
     font-size: 1.2em;
     float: right;
-    color: #fa713e;
+    /*color: rgb(235, 81, 81);*/
 }
 
-@media (max-width: 1080) {
+@media (max-width: 1080px) {
     #clear {
         clear: both;
     }
@@ -213,11 +204,10 @@ footer {
 }
 
 #footer-menu {
-    font-size: 1.2 em;
+    font-size: 1.2em;
 }
 
 #footer-menu>a {
-    color: #fa713e;
     margin-left: 2%;
 }
 
@@ -244,7 +234,7 @@ footer {
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
-    background-color: rgba(217, 91, 72, 1);
+    background-color: rgb(235, 81, 81);
     margin-left: 2%;
     width: 30px;
     height: 30px;

@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave');
-@import url('https://fonts.googleapis.com/css?family=Suez+One');
+@import url('https://fonts.googleapis.com/css?family=Domine');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+
 
 html {
     width: 100%;
@@ -7,17 +9,21 @@ html {
 }
 body {
     width: 100%;
-    /*height: 100%;*/
-    background-color: whitesmoke;
-    color: #444;
-    height: 2000px;
-    /* background: url("../images/background.png"); */
-    
+    height: 100%;
+    background-color: black;
+    /*color: white;*/
+    /*height: 2000px;*/
+    font-family: Domine, sans-serif;
+}
+
+.clear {
+    clear: both;
 }
 
 .background {
     content: "";
-    /*background: url("../images/background.png");*/
+    background: url("../images/background.png");
+    background-attachment: fixed;
     width: 100%;
     height: 100%;
     opacity: 0.4;
@@ -26,11 +32,12 @@ body {
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;   
+    z-index: -1;
 }
 
 a {
-    color: #fa713e;
+    color: #FFFFFF;
+    font-family: 'Berkshire Swash', cursive;
     text-decoration: none;
     transition: all.6s ease;
     -ms-transition: all.6s ease;
@@ -40,7 +47,8 @@ a {
 }
 
 a:hover {
-    color: #c34f25;
+    /*color: #c34f25;*/
+    color: rgb(235, 81, 81);
     text-decoration: none;
     transition: all.6s ease;
     -ms-transition: all.6s ease;
@@ -72,18 +80,20 @@ hr {
     opacity: 0.97;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: Oswald, sans-serif;
+}
+
 .heading {
     font-weight: lighter;
     font-size: 1.6em;
-    font-family: 'Sedgwick Ave', cursive;
     border-bottom: 2px solid #db6e6e;
     float: left;
     /* float в данном случае укорачивает линии */
-
-    color: #462f2f;
+    color: #FFFFFF;
     padding: 0px 5px;
 }
 
 .heading:first-letter {
-    color: #db6e6e;
+    color: rgb(235, 81, 81);
 }
