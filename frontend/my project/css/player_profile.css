@@ -1,3 +1,8 @@
+#player-profile {
+    display: none;
+    color: whitesmoke;
+}
+
 #profile-left {
     width: 20%;
     float: left;
@@ -23,19 +28,22 @@
 }
 
 .avatar>img {
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 25px 25px 25px 25px;
     width: 200px;
     height: 200px;
 }
 
 .info {
-    font-size: 1.3em;
+    /*font-size: 1.3em;*/
     width: 20%;
-    margin: 70px 0%;
+    margin: 70px 0;
     float: left;
-    color: rgb(165, 143, 143);
 }
 
+.info p {
+    margin-bottom: 10px;
+}
 #info-value {
     float: left;
 }
+

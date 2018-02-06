@@ -1,4 +1,9 @@
 #players-rating {
+    /*display: none;*/
+    color: antiquewhite;
+}
+
+#players-rating {
     width: 60%;
     float: left;
     margin-top: 20px;
@@ -10,13 +15,23 @@
 
 .player-info {
     font-size: 1.3em;
-    width: 20%;
-    margin: 5px 0%;
+    /*width: 20%;*/
+    /*margin: 5px 0%;*/
+    margin-top: 5px;
+    /*margin-right: 10%;*/
+    flex-basis: 150px;
     float: left;
-    color: rgb(165, 143, 143);
 }
 
-.player-info-column-name {
-    font-size: 1.4em;
-    color: rgb(204, 199, 199);
+.section-paragraph {
+    display: flex;
+    justify-content: space-between;
 }
+
+.player-info-column-name span {
+    font-size: 1.1em;
+    color: whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    display: inline-block;
+}
+

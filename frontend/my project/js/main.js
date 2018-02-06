@@ -8,26 +8,29 @@ const UserService = window.UserService;
 
 const userService = new UserService();
 
+const navBar = new NavBar(document.getElementById('header'), 'reg-auth', 'profile-nav');
+
 const sections = {
     app: new Block(document.getElementById('app')),
-    mainSection: new Block(document.getElementById('main_page')),
-    playerProfileSection: new Block(document.getElementById('player-profile')),
-    playersRating: Block.Create('section', {}, ['playersRating-section']),
-    playersProfile: Block.Create('section', {}, ['playersProfile-section'])
+    // playersProfile: Block.Create('section', {}, ['player-profile'])
 };
-const navBar = new NavBar(document.getElementById('header'), 'reg-auth', 'profile-nav');
-sections.app.append(sections.playersRating);
-sections.app.append(sections.playersProfile);
+// sections.app.append(sections.playersProfile);
 
 const forms = {
     registrationForm: new Form(document.getElementById('registration-form')),
     signInForm: new Form(document.getElementById('signIn-form'))
 };
 
-// navigation buttons for big screen
+// preload
+openMenu();
+navBar.onLogout();
+// navBar.onLogin();
+
 const bigScreenButtons = {
     registrationButton: new Block(document.getElementById('registration-btn')),
     signInButton: new Block(document.getElementById('signIn-btn')),
+    profileButton: new Block(document.getElementById('profile-btn')),
+    logoutButton: new Block(document.getElementById('logout-btn')),
 
     tournamentsButton: new Block(document.getElementById('tournament-btn')),
     gamesButton: new Block(document.getElementById('games-btn')),
@@ -35,25 +38,15 @@ const bigScreenButtons = {
     playersButton: new Block(document.getElementById('players-btn'))
 };
 
-// navigation buttons for small screen FULL
-const smallScreenAlButtons = {
-    registrationButton: bigScreenButtons.registrationButton,
-    signInButton: bigScreenButtons.signInButton
-};
-// navigation buttons for small screen Small Menu
-
-// preload
-openMenu();
-// navBar.onLogout();
-navBar.onLogin();
-
-
 bigScreenButtons.registrationButton.on('click', openRegistration);
 bigScreenButtons.signInButton.on('click', openSignIn);
+bigScreenButtons.profileButton.on('click', openProfile);
+bigScreenButtons.logoutButton.on('click', logout);
 bigScreenButtons.tournamentsButton.on('click', openTournaments);
 bigScreenButtons.gamesButton.on('click', openGames);
 bigScreenButtons.teamsButton.on('click', openTeams);
 bigScreenButtons.playersButton.on('click', openPlayers);
+
 
 function openRegistration() {
     forms.registrationForm.onSubmit(function(formdata) {
@@ -105,29 +98,25 @@ function openTeams() {
     hideAllSections();
 }
 
-// function openPlayers() {
+// function openProfile() {
+//     if (!sections.playersProfile.ready) {
+//         sections.playersRating.profileDiv = new Profile();
+//         sections.playersRating
+//             .append(Block.Create('h2', {}, [], 'Список лидеров'))
+//             .append(sections.playersRating.scoreboard);
+//         sections.playersRating.ready = true;
+//     }
 //     hideAllSections();
+//
+//     const users = [{
+//         nickname: 'a.ostapenko@corp.mail.ru',
+//         team: 'password',
+//         rating: 20,
+//         position: 72
+//     }];
+//     sections.playersRating.scoreboard.update(users);
+//     sections.playersRating.show();
 // }
-
-function openProfile() {
-    if (!sections.playersProfile.ready) {
-        sections.playersRating.profileDiv = new Profile();
-        sections.playersRating
-            .append(Block.Create('h2', {}, [], 'Список лидеров'))
-            .append(sections.playersRating.scoreboard);
-        sections.playersRating.ready = true;
-    }
-    hideAllSections();
-
-    const users = [{
-        nickname: 'a.ostapenko@corp.mail.ru',
-        team: 'password',
-        rating: 20,
-        position: 72
-    }];
-    sections.playersRating.scoreboard.update(users);
-    sections.playersRating.show();
-}
 
 function openPlayers() {
     if (!sections.playersRating.ready) {
@@ -159,4 +148,8 @@ function hideAllSections() {
         forms[key].hide();
     }
     sections.app.show();
+}
+
+function logout() {
+
 }
