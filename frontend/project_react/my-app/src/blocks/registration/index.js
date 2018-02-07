@@ -70,7 +70,7 @@ class Registration extends Component {
                             <input type="password" id="password-reg" onChange={this.handleChange} name="password"></input>
                         </fieldset>
 
-                        <button type="submit">Sign Up</button>
+                        <button onClick={this.handleSubmit} type="submit">Sign Up</button>
                     </form>
                 </div>
             );

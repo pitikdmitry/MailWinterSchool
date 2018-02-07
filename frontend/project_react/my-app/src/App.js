@@ -59,7 +59,6 @@ class App extends Component {
         });
     }
 
-
     handleClick = (buttonId) => {
         switch(buttonId) {
             case 'news-btn':
@@ -96,6 +95,10 @@ class App extends Component {
 
     handleClickRegistration = (data) => {
         this.userService.register(data, () => {});
+    }
+
+    handleSignIn = (data) => {
+        this.userService.login(data, () => {});
     }
 
     render() {

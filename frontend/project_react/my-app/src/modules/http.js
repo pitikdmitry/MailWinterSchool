@@ -1,13 +1,16 @@
 class Http {
     constructor() {
-        this.BaseUrl = 'http://localhost:5000';
+
     }
 
+
     static GetCORS(address, callback) {
+        let BaseUrl = 'http://localhost:5000';
+
         let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
 
         let xhr = new XHR();
-        xhr.open('GET', this.BaseUrl + address, true);
+        xhr.open('GET', BaseUrl + address, true);
         // xhr.withCredentials = true;
         xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
 
@@ -31,10 +34,12 @@ class Http {
     }
 
     static PostCORS(address, body, callback) {
+        let BaseUrl = 'http://localhost:5000';
         let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
-
+        debugger;
+        console.log(BaseUrl + address);
         let xhr = new XHR();
-        xhr.open('POST', this.BaseUrl + address, true);
+        xhr.open('POST', BaseUrl + address, true);
         // xhr.withCredentials = true;
         xhr.setRequestHeader('Content-Type', 'application/json; charset=utf8');
 
