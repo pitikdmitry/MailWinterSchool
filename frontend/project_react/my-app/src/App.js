@@ -5,10 +5,12 @@ import {Footer} from './blocks/footer/index.js';
 import {Profile} from './blocks/profile/index.js';
 import {Registration} from './blocks/registration/index.js';
 import {SignIn} from "./blocks/signIn";
+import {UserService} from "./services/user-service.js";
 
 class App extends Component {
     constructor(props) {
         super(props);
+        this.userService = UserService;
         this.state = {
             header: true,
             news: false,
@@ -92,6 +94,11 @@ class App extends Component {
         }
     }
 
+    handleClickRegistration = (data) => {
+        debugger;
+        this.userService.register();
+    }
+
     render() {
         var user_1 = {
             nickname: "nick",
@@ -105,7 +112,7 @@ class App extends Component {
                 <div id="content">
                     <Header visibility={this.state.header} callBack={this.handleClick}/>
                     <Profile user={user_1} visibility={this.state.profile}/>
-                    <Registration visibility={this.state.registration}/>
+                    <Registration visibility={this.state.registration} callBack={this.handleClickRegistration}/>
                     <SignIn visibility={this.state.signIn}/>
                 </div>
                 <Footer/>

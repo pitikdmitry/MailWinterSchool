@@ -44,8 +44,7 @@ body {
 
 .background {
   content: "";
-  background: url("../public/images/background.png");
-  background-attachment: fixed;
+  background: url("../public/images/background.png") fixed no-repeat center;
   width: 100%;
   height: 100%;
   opacity: 0.4;
