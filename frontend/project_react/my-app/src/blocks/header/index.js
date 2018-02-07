@@ -1,31 +1,40 @@
 import React, { Component } from 'react';
+import {showNews, showTournament, showGames, showTeams, showPlayers, showSignIn, showRegistration, showProfile, logout} from '../../functions.js';
 import './index.css';
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    handleClick = (clickData) => {
+        this.props.callBack(clickData.target.id);
+    }
+
     render() {
         return (
             <header id="header">
                 <div id="logo">
-                    <a href="" title="on-main">
+                    <a href="#" id="news-btn" onClick={this.handleClick} title="on-main">
                         <img border="0" alt="img" src="./../../../public/images/logo.png" width="70" height="70"></img>
                             <span className="title">CsGoForum</span>
                     </a>
                 </div>
                 <div id="navigation">
-                    <a id="tournament-btn" href="#" title="Tournaments">Tournaments</a>
-                    <a id="games-btn" href="#" title="Games">Games</a>
-                    <a id="teams-btn" href="#" title="Teams">Teams</a>
-                    <a id="players-btn" href="#" title="Players">Players</a>
+                    <a id="tournament-btn" href="#" onClick={this.handleClick} title="Tournaments">Tournaments</a>
+                    <a id="games-btn" href="#" onClick={this.handleClick} title="Games">Games</a>
+                    <a id="teams-btn" href="#" onClick={this.handleClick} title="Teams">Teams</a>
+                    <a id="players-btn" href="#" onClick={this.handleClick} title="Players">Players</a>
                 </div>
 
                 <div id="reg-auth">
                     <a href="#" title="Sign-In">
-                        <div id="signIn-btn" className="auth-btn">
+                        <div id="signIn-btn" onClick={this.handleClick} className="auth-btn">
                             Sign In
                         </div>
                     </a>
                     <a href="#" title="Registration">
-                        <div id="registration-btn" className="auth-btn">
+                        <div id="registration-btn" onClick={this.handleClick} className="auth-btn">
                             Registration
                         </div>
                     </a>
@@ -33,8 +42,8 @@ class Header extends Component {
                 <div className="dropdown" id="profile-nav">
                     <button className="drop-btn">Nickname</button>
                     <div className="dropdown-content">
-                        <a id='profile-btn' href="#">Profile</a>
-                        <a id='logout-btn' href="#">Logout</a>
+                        <a id='profile-btn' href="#" onClick={this.handleClick}>Profile</a>
+                        <a id='logout-btn' href="#" onClick={this.handleClick}>Logout</a>
                     </div>
                 </div>
                 <div id="clear-navigation"></div>
@@ -59,4 +68,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export {Header};

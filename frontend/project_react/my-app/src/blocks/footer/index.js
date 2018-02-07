@@ -21,11 +21,11 @@ class Footer extends Component {
                 <div id="social">
                     <a href="" title="vk"><i className="fa fa-vk" aria-hidden="true"></i></a>
                     <a href="" title="facebook"><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="" title="twitter"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-            </div>
-    </footer>
+                    <a href="" title="twitter"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
+            </footer>
         );
     }
 }
 
-export default Footer;
+export {Footer};
