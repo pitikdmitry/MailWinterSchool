@@ -79,4 +79,4 @@ class Http {
     // }
 }
 
-export {Http}
+export {Http};

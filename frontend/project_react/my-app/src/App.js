@@ -10,7 +10,7 @@ import {UserService} from "./services/user-service.js";
 class App extends Component {
     constructor(props) {
         super(props);
-        this.userService = UserService;
+        this.userService = new UserService();
         this.state = {
             header: true,
             news: false,
@@ -95,8 +95,7 @@ class App extends Component {
     }
 
     handleClickRegistration = (data) => {
-        debugger;
-        this.userService.register();
+        this.userService.register(data, () => {});
     }
 
     render() {

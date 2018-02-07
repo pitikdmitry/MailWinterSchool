@@ -5,59 +5,62 @@
 }
 
 #registration {
-    max-width: 30%;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    float: left;
-    margin-top: 20px;
-    margin-left: 35%;
 }
 
-form {
-    margin: 10px auto;
+form .heading {
+    float: none;
+    margin: auto;
+}
+
+.reg-form {
+    margin: auto;
+    margin-top: 8%;
+    text-decoration: none;
+    width: 50%;
     padding: 10px 20px;
-    background: #f4f7f8;
+    background: #0000007e;
     border-radius: 8px;
-    font-family: 'Nunito', sans-serif;
-    color: #384047;
+    font-family: Domine, sans-serif;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 18px;
 }
 
-input,
-textarea,
-select {
-    background: rgba(255,255,255,0.1);
+input {
     border: none;
-    font-size: 16px;
+    font-size: 20px;
     height: auto;
-    margin: 0;
+    /*margin: 0;*/
     outline: 0;
     padding: 15px;
-    width: 100%;
-    background-color: #e8eeef;
-    color: #272d31;
+    /*width: 100%;*/
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.705);
+    color: #000000;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     margin-bottom: 30px;
 }
 
-
 form button {
     padding: 19px 39px 18px 39px;
     color: #FFF;
-    background-color: #4bc970;
-    font-size: 18px;
+    background-color:  rgb(235, 81, 81);
+    font-size: 22px;
     text-align: center;
     font-style: normal;
     border-radius: 5px;
-    width: 100%;
-    border: 1px solid #3ac162;
-    border-width: 1px 1px 3px;
+    width: 50%;
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
     margin-bottom: 10px;
 }
 
-form fieldset {
-    margin-bottom: 30px;
-    border: none;
-}
+/*form fieldset {*/
+    /*margin-bottom: 30px;*/
+    /*border: none;*/
+/*}*/
 
 form legend {
     font-size: 1.4em;

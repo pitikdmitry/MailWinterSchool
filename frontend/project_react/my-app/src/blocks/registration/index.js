@@ -17,20 +17,20 @@ class Registration extends Component {
     }
 
     handleChange(event) {
-        switch(event.target.id) {
+        switch(event.target.name) {
             case 'nickname':
                 this.setState({nickname: event.target.value});
                 break;
-            case 'First-name':
+            case 'first_name':
                 this.setState({first_name: event.target.value});
                 break;
-            case 'Surname':
+            case 'surname':
                 this.setState({surname: event.target.value});
                 break;
-            case 'mail':
+            case 'email':
                 this.setState({email: event.target.value});
                 break;
-            case 'password-reg':
+            case 'password':
                 this.setState({password: event.target.value});
                 break;
             default:
@@ -50,11 +50,10 @@ class Registration extends Component {
         if (this.props.visibility) {
             return (
                 <div id="registration">
-                    <form id="registration-form" method="post">
-                        <h2 className="heading">Registration</h2>
+                    <form className="reg-form" id="registration-form" method="post">
+                        <h2 className="heading" >Registration</h2>
                         <div className="clear"><br></br></div>
                         <fieldset>
-                            <legend>Your basic info</legend>
                             <label>Nickname:</label>
                             <input type="text" id="nickname" onChange={this.handleChange} name="nickname"></input>
 
@@ -71,7 +70,7 @@ class Registration extends Component {
                             <input type="password" id="password-reg" onChange={this.handleChange} name="password"></input>
                         </fieldset>
 
-                        <button id="register-submit-btn" onClick={this.handleSubmit} type="submit">Sign Up</button>
+                        <button type="submit">Sign Up</button>
                     </form>
                 </div>
             );

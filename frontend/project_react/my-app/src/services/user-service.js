@@ -1,21 +1,23 @@
-import Http from "../modules/http.js"
-import User from "../models/user.js"
+import {Http} from "../modules/http.js"
+import {User} from "../models/user.js"
 
 class UserService {
     constructor() {
         this.user = null;
         this.users = [];
         this.nickname = null;
+        this.Http = Http;
     }
 
     register(formdata, callback) {
-        Http.PostCORS('/users/create', formdata, callback);
+        debugger;
+        this.Http.PostCORS('/users/create', formdata, callback);
         // Http.FetchPost('/users/create', formdata);
         this.nickname = formdata['nickname'];
     }
 
     login(email, password, callback) {
-        Http.Post('/login', {email, password}, callback);
+        this.Http.Post('/login', {email, password}, callback);
     }
 
     isLoggedIn() {
