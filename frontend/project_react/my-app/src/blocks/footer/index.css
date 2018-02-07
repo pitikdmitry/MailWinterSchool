@@ -1,0 +1,80 @@
+#footer {
+    float: left;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 98%;
+    padding: 1%;
+    border-top: 1px solid silver;
+}
+
+#site-name {
+    margin-right: 5%;
+    font-size: 1.2em;
+    float: right;
+    /*color: rgb(235, 81, 81);*/
+}
+
+@media (max-width: 1080px) {
+    #clear {
+        clear: both;
+    }
+}
+
+#clear {
+    clear: both;
+}
+
+#footer-menu {
+    font-size: 1.2em;
+}
+
+#footer-menu>a {
+    margin-left: 2%;
+}
+
+#footer-menu>a:hover, #rights>a:hover {
+    border-bottom: 1px solid silver;
+}
+
+#rights {
+    float: left;
+    margin-left: 5%;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+#social {
+    float: right;
+    width: 40%;
+    margin-right: 4%;
+    margin-top: 5px;
+}
+
+#social>a {
+    float: right;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: rgb(235, 81, 81);
+    margin-left: 2%;
+    width: 30px;
+    height: 30px;
+
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.2em;
+}
+
+#social>a:hover {
+    background: #c34f25;
+    opacity: 0.6;
+}
+
+@media (max-width: 400px) {
+    #site-name {
+        display: none;
+    }
+    #social {
+        width: 100%;
+    }
+}

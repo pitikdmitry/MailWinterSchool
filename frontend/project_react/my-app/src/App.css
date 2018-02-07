@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Domine');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  font-size: 1.0em;
+  color: white;
+  /*height: 2000px;*/
+  font-family: Domine, sans-serif;
+}
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#content {
+  flex: 1 0 auto;
+}
+
+
+.clear {
+  clear: both;
+}
+
+.background {
+  content: "";
+  background: url("../public/images/background.png");
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+a {
+  color: #FFFFFF;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 1.05em;
+  text-decoration: none;
+  transition: all.6s ease;
+  -ms-transition: all.6s ease;
+  -o-transition: all.6s ease;
+  -moz-transition: all.6s ease;
+  -webkit-transition: all.6s ease;
+}
+
+a:hover {
+  /*color: #c34f25;*/
+  color: rgb(235, 81, 81);
+  text-decoration: none;
+  transition: all.6s ease;
+  -ms-transition: all.6s ease;
+  -o-transition: all.6s ease;
+  -moz-transition: all.6s ease;
+  -webkit-transition: all.6s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  -moz-transition: all 3s ease-out;
+  -o-transition: all 3s ease-out;
+  -webkit-transition: all 3s ease-out;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #fa713e;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  opacity: 0.97;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Oswald, sans-serif;
+}
+
+.heading {
+  font-weight: lighter;
+  font-size: 2.0em;
+  border-bottom: 2px solid #db6e6e;
+  float: left;
+  /* float в данном случае укорачивает линии */
+  color: #FFFFFF;
+  padding: 0 5px;
+}
+
+.heading:first-letter {
+  color: rgb(235, 81, 81);
+}
+
+/*@keyframes App-logo-spin {*/
+  /*from { transform: rotate(0deg); }*/
+  /*to { transform: rotate(360deg); }*/
+/*}*/

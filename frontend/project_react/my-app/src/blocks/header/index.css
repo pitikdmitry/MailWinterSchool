@@ -1,0 +1,211 @@
+.title {
+    font-size: 3em;
+    color: #FFFFFF;
+    /*font-family: Oswald, sans-serif;*/
+    font-family: 'Berkshire Swash', cursive;
+    text-shadow: 0 1px 1px #0C1114;
+}
+
+#header {
+    float: left;
+    background-color: rgba(0, 0, 0, 0.2);
+    /*width: 99.4%;*/
+    width: 100%;
+    border-bottom: 1px solid silver;
+}
+
+#header>div#logo>a>img {
+    /* для logo */
+    width: 45px;
+    height: 45px;
+    float: left;
+}
+
+#header #profile-nav {
+    float: right;
+}
+
+/* Нужно будет адаптирвоатьпод разные экраны */
+@media (min-width: 1000px) {
+    #header>div#logo>a>img {
+        /* для logo */
+        margin-left: 5%;
+    }
+
+    #logo {
+        float: left;
+        width: 30%;
+    }
+
+    #navigation {
+        float: left;
+        width: 37%;
+    }
+
+    #reg-auth {
+        float: right;
+        width: 30%;
+    }
+}
+
+@media (max-width: 999px) and (min-width: 550px) {
+    #header>div#logo>a>img {
+        /* для logo */
+        margin-left: 5%;
+    }
+
+    #logo {
+        float: left;
+        width: 50%;
+    }
+
+    #navigation {
+        visibility: hidden;
+        display: none;
+    }
+
+    #reg-auth {
+        float: right;
+        width: 40%;
+    }
+}
+@media (max-width: 549px) {
+    #header>div#logo>a>img {
+        /* для logo */
+        margin-left: 5%;
+    }
+
+    #logo {
+        float: left;
+        width: 75%;
+    }
+
+    #navigation {
+        visibility: hidden;
+        display: none;
+    }
+
+    #reg-auth {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+/* Нужно будет адаптирвоатьпод разные экраны */
+
+#navigation {
+    text-align: center;
+    font-size: 1.4em;
+    padding-top: 10px;
+}
+
+#navigation>a:hover {
+    border-bottom: 1px solid silver;
+}
+
+#navigation>a {
+    margin-left: 5%;
+}
+
+#reg-auth>a>div.auth-btn {
+    float: right;
+    margin-right: 3%;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 5px 9px;
+    font-size: 1.2em;
+    /* background-color: ; */
+    border-bottom: 4px solid silver;
+}
+
+#reg-auth>a:hover>div.auth-btn {
+    border-bottom: 2px solid silver;
+    margin-top: 7px;
+}
+
+#reg-auth>a:active>div.auth-btn {
+    border-bottom: 0px;
+    margin-top: 9px;
+}
+
+#menuShow {
+    /* display: inline; */
+    font-size: 1.4em;
+    margin-left: 20px;
+    float: left;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#clear-navigation {
+    clear: both;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    position: absolute;
+    font-size: 1.3em;
+    min-width: 160px;
+    font-family: 'Berkshire Swash', cursive;
+    z-index: 1;
+}
+
+.drop-btn {
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.0);
+    font-family: 'Berkshire Swash', cursive;
+    /*text-decoration: none;*/
+    font-size: 1.6em;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content a {
+    color: white;
+    /*background-color: rgba(0, 0, 0, 0.8);*/
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 5px;
+}
+
+.dropdown-content a:hover {background-color: rgba(235, 81, 81, 0.7);}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#mobileMenu, #mobileMenuWithoutReg {
+    font-size: 1.3em;
+    padding-top: 20px;
+    display: none;
+    width: 97%;
+    float: left;
+    margin-left: 3%;
+}
+
+#mobileMenu a, #mobileMenuWithoutReg a {
+    /* padding-top: 20px; */
+    margin-top: 20%;
+}
+
+@media (min-width: 1000px) {
+    #menuShow {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 784px) {
+    #navigation {
+        display: none;
+        visibility: hidden;
+    }
+}

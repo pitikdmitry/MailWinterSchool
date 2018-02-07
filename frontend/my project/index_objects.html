@@ -276,36 +276,5 @@
 <script src="js/blocks/navbar/navbar.js"></script>
 <script src="js/main.js"></script>
 
-<!-- jQuery -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script>
-    $('#menuShow').click (function() {
-        if ($('#mobileMenu').is(':visible') || $('#mobileMenuWithoutReg').is(':visible')) {
-            $('#mobileMenu').hide();
-            $('#mobileMenuWithoutReg').hide();
-        } else {
-            if ($( document ).width() > 549 && $( document ).width() < 1000)
-                $('#mobileMenuWithoutReg').show();
-            else
-                $('#mobileMenu').show();
-        }
-    });
-
-    // Если перевернули экран
-    window.onresize = function(event) {
-        $('#mobileMenu').hide();
-        $('#mobileMenuWithoutReg').hide();
-    }
-
-    $(document).scroll(function() {
-        if ($( document ).width() > 999) {
-            if($(document).scrollTop () > 1)
-                $('header').addClass('fixed');
-            else
-                $('header').removeClass('fixed');
-        }
-
-    });
-</script>
 </body>
 </html>
