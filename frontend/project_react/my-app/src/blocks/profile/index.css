@@ -1,0 +1,48 @@
+#player-profile {
+    color: whitesmoke;
+}
+
+#profile-left {
+    width: 20%;
+    float: left;
+    margin-top: 20px;
+    margin-left: 15%;
+}
+
+#profile-right {
+    width: 50%;
+    float: left;
+    margin-left: 2%;
+    margin-top: 20px;
+}
+
+.avatar {
+    width: 100%;
+    float: left;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    /* border: 1px solid #e3e3e3; */
+    /* background-color: #fff; */
+    box-sizing: border-box;
+}
+
+.avatar>img {
+    border-radius: 25px 25px 25px 25px;
+    width: 200px;
+    height: 200px;
+}
+
+.info {
+    /*font-size: 1.3em;*/
+    width: 20%;
+    margin: 70px 0;
+    float: left;
+}
+
+.info p {
+    margin-bottom: 10px;
+}
+#info-value {
+    float: left;
+}
+
