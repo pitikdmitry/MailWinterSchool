@@ -13,9 +13,9 @@ class UserService {
         return this.Http.FetchPost('/users/create', formdata);
     }
 
-    login(email, password, callback) {
+    login(data, callback) {
         // this.Http.PostCORS('/login', {email, password}, callback);
-        return this.Http.FetchPost('/login', {email, password});
+        return this.Http.FetchPost('/users/login', data);
     }
 
     isLoggedIn() {
@@ -23,7 +23,11 @@ class UserService {
     }
 
     saveUser(data) {
-        this.user = new User(data.nickname, data.first_name, data.surname, null, data.email, data.password);
+        this.user = new User(data.nickname, data.first_name, data.surname, data.about, data.email, data.password);
+    }
+
+    logout() {
+        this.user = null;
     }
 
     getData(callback, force = false) {

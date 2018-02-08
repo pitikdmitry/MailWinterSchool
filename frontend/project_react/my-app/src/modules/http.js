@@ -100,27 +100,6 @@ class Http {
                 return response.json();
             });
     }
-    //
-    // static FetchPost(address, body) {
-    //     const url = (this.BaseUrl || baseUrl) + address;
-    //     const json_body = JSON.stringify(body);
-    //     return fetch(url, {
-    //         method: 'POST',
-    //         mode: 'no-cors',
-    //         credentials: 'include',
-    //         body: JSON.stringify(body),
-    //         headers: {
-    //             'Content-Type': 'application/json; charset=utf-8'
-    //         }
-    //     })
-    //         .then(function (response) {
-    //             if (response.status >= 400) {
-    //                 throw response;
-    //             }
-    //
-    //             return response.json();
-    //         });
-    // }
 }
 
 export {Http};

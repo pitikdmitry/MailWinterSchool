@@ -33,7 +33,7 @@ class UsersRepository:
             cursor.close()
             return STATUS_CODE['CONFLICT']
 
-    def get_by_id(self, nickname: str) -> Tuple:
+    def get_by_nickname(self, nickname: str) -> Tuple:
         connect, cursor = self._data_context.create_connection()
 
         sql = "SELECT nickname, first_name, surname, about, email, password FROM users WHERE nickname=%s;"
@@ -48,4 +48,21 @@ class UsersRepository:
 
         except BaseException as e:
             cursor.close()
-            return None, STATUS_CODE['CONFLICT']
+            return None, STATUS_CODE['NOT_FOUND']
+
+    def get_by_nickname_or_email(self, nickname_or_email: str) -> Tuple:
+        connect, cursor = self._data_context.create_connection()
+
+        sql = "SELECT nickname, first_name, surname, about, email, password FROM users WHERE nickname=%s or email=%s;"
+        try:
+            cursor.execute(sql, [nickname_or_email, nickname_or_email])
+            self._data_context.put_connection(connect)
+
+            user = cursor.fetchone()
+            cursor.close()
+
+            return user, STATUS_CODE['OK']
+
+        except BaseException as e:
+            cursor.close()
+            return None, STATUS_CODE['NOT_FOUND']

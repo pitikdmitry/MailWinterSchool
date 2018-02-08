@@ -23,6 +23,8 @@ class App extends Component {
             signIn: false,
             logout: false
         };
+
+        this.handleClickRegistration = this.handleClickRegistration.bind(this);
     }
 
     hideAll() {
@@ -98,18 +100,30 @@ class App extends Component {
         }
     }
 
-    handleClickRegistration = (data) => {
+    handleClickRegistration(data) {
+        if (this.userService.isLoggedIn()) {
+            this.showNews();
+        }
         this.userService.register(data)
             .then(function (data) {
                 debugger;
                 this.showNews();
-                // this.userService.saveUser(data);
-            })
+                this.userService.saveUser(data);
+            }.bind(this))
             .catch((err) => alert(`Some error ${err.status}: ${err.responseText}`));
     }
 
     handleSignIn = (data) => {
-        this.userService.login(data, () => {});
+        if (this.userService.isLoggedIn()) {
+            this.showNews();
+        }
+        this.userService.login(data)
+            .then(function (data) {
+                debugger;
+                this.showNews();
+                this.userService.saveUser(data);
+            }.bind(this))
+            .catch((err) => alert(`Some error ${err.status}: ${err.responseText}`));
     }
 
     render() {

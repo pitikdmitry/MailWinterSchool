@@ -25,7 +25,6 @@ class SignIn extends Component {
 
                 break;
         }
-
     }
 
     handleSubmit(event) {
@@ -48,7 +47,7 @@ class SignIn extends Component {
                             <input type="password" id="password-signIn" onChange={this.handleChange} name="user_password"></input>
                         </fieldset>
 
-                        <button onSubmit={this.handleSubmit} type="submit">Log In</button>
+                        <button onClick={this.handleSubmit} type="submit">Log In</button>
                     </form>
                 </div>
             );
