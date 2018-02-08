@@ -24,6 +24,7 @@ class App extends Component {
             logout: false
         };
     }
+
     hideAll() {
         this.setState({
             news: false,
@@ -36,6 +37,10 @@ class App extends Component {
             signIn: false,
             logout: false
         });
+    }
+
+    showNews() {
+        this.hideAll();
     }
 
     showProfile() {
@@ -94,7 +99,13 @@ class App extends Component {
     }
 
     handleClickRegistration = (data) => {
-        this.userService.register(data, () => {});
+        this.userService.register(data)
+            .then(function (data) {
+                debugger;
+                this.showNews();
+                // this.userService.saveUser(data);
+            })
+            .catch((err) => alert(`Some error ${err.status}: ${err.responseText}`));
     }
 
     handleSignIn = (data) => {
@@ -115,7 +126,7 @@ class App extends Component {
                     <Header visibility={this.state.header} callBack={this.handleClick}/>
                     <Profile user={user_1} visibility={this.state.profile}/>
                     <Registration visibility={this.state.registration} callBack={this.handleClickRegistration}/>
-                    <SignIn visibility={this.state.signIn}/>
+                    <SignIn visibility={this.state.signIn} callBack={this.handleSignIn}/>
                 </div>
                 <Footer/>
             </div>

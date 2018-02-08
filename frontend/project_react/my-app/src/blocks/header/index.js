@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {showNews, showTournament, showGames, showTeams, showPlayers, showSignIn, showRegistration, showProfile, logout} from '../../functions.js';
 import './index.css';
 
 class Header extends Component {

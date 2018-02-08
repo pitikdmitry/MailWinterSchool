@@ -5,23 +5,25 @@ class UserService {
     constructor() {
         this.user = null;
         this.users = [];
-        this.nickname = null;
         this.Http = Http;
     }
 
-    register(formdata, callback) {
-        debugger;
-        this.Http.PostCORS('/users/create', formdata, callback);
-        // Http.FetchPost('/users/create', formdata);
-        this.nickname = formdata['nickname'];
+    register(formdata) {
+        // this.Http.PostCORS('/users/create', formdata, callback);
+        return this.Http.FetchPost('/users/create', formdata);
     }
 
     login(email, password, callback) {
-        this.Http.Post('/login', {email, password}, callback);
+        // this.Http.PostCORS('/login', {email, password}, callback);
+        return this.Http.FetchPost('/login', {email, password});
     }
 
     isLoggedIn() {
         return !!this.user;
+    }
+
+    saveUser(data) {
+        this.user = new User(data.nickname, data.first_name, data.surname, null, data.email, data.password);
     }
 
     getData(callback, force = false) {

@@ -61,6 +61,45 @@ class Http {
 
         xhr.send(JSON.stringify(body));
     }
+
+    static FetchGet(address) {
+        let BaseUrl = 'http://localhost:5000';
+        const url = BaseUrl + address;
+        return fetch(url, {
+            method: 'GET',
+            // mode: 'cors',
+            // credentials: 'include'
+        })
+            .then(function (response) {
+                if (response.status >= 400) {
+                    throw response;
+                }
+
+                return response.json();
+            });
+    }
+    static FetchPost(address, body) {
+        debugger;
+        let BaseUrl = 'http://localhost:5000';
+        const url = BaseUrl + address;
+        return fetch(url, {
+            method: 'POST',
+            // mode: 'cors',
+            // credentials: 'include',
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        })
+            .then(function (response) {
+                debugger;
+                if (response.status >= 400) {
+                    throw response;
+                }
+
+                return response.json();
+            });
+    }
     //
     // static FetchPost(address, body) {
     //     const url = (this.BaseUrl || baseUrl) + address;
