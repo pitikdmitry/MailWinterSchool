@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import './index.css';
 import {User} from '../../models/user.js';
 
-class Profile extends Component {
+class SomeUserProfile extends Component {
     constructor(props) {
         super(props);
-        this.user = null;
+        this.someUser = null;
     }
 
     render() {
         if (this.props.visibility) {
-            this.user = this.props.user;
+            this.someUser = this.props.someUser;
             return (
                 <div id="player-profile">
                     <div id="profile-left">
@@ -38,13 +38,13 @@ class Profile extends Component {
                             <p>Team</p>
                         </div>
                         <div id="info-value" className="info">
-                            <p>{this.user.nickname()}</p>
-                            <p>{this.user.firstName()}</p>
-                            <p>{this.user.surname()}</p>
-                            <p>{this.user.email()}</p>
-                            <p>{this.user.kills()}</p>
-                            <p>{this.user.deaths()}</p>
-                            <p>{this.user.team()}</p>
+                            <p>{this.someUser.nickname()}</p>
+                            <p>{this.someUser.firstName()}</p>
+                            <p>{this.someUser.surname()}</p>
+                            <p>{this.someUser.email()}</p>
+                            <p>{this.someUser.kills()}</p>
+                            <p>{this.someUser.deaths()}</p>
+                            <p>{this.someUser.team()}</p>
                         </div>
                     </div>
                 </div>
@@ -55,4 +55,4 @@ class Profile extends Component {
     }
 }
 
-export {Profile};
+export {SomeUserProfile};

@@ -9,7 +9,8 @@ class Registration extends Component {
                     first_name: '',
                     surname: '',
                     email: '',
-                    password: ''
+                    password: '',
+                    team: ''
                     };
 
         this.handleChange = this.handleChange.bind(this);
@@ -32,6 +33,9 @@ class Registration extends Component {
                 break;
             case 'password':
                 this.setState({password: event.target.value});
+                break;
+            case 'team':
+                this.setState({team: event.target.value});
                 break;
             default:
 
@@ -68,6 +72,9 @@ class Registration extends Component {
 
                             <label>Password:</label>
                             <input type="password" id="password-reg" onChange={this.handleChange} name="password"></input>
+
+                            <label>Team:</label>
+                            <input type="team" id="team-reg" onChange={this.handleChange} name="team"></input>
                         </fieldset>
 
                         <button onClick={this.handleSubmit} type="submit">Sign Up</button>

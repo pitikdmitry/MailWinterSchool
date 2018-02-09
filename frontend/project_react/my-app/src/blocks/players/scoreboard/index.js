@@ -2,20 +2,24 @@ import React, { Component } from 'react';
 import '../index.css';
 
 class Scoreboard extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    handleClick = (clickData) => {
+        let value = clickData.target.outerText;
+        this.props.callBack(clickData.target.id, value);
+    }
+
     render() {
-        let text = [];
-        for (let i = 0; i < 10; ++i) {
-            let oneText = (
-                <div className="section-paragraph">
-                    <p className="player-info">1</p>
-                    <p className="player-info">induk</p>
-                    <p className="player-info">100500</p>
-                    <p className="player-info">indku-team</p>
-                </div>
-            );
-            text.append(oneText);
-        }
-        return text;
+        return (
+            <div className="section-paragraph">
+                <p className="player-info">{this.props.playerPosition}</p>
+                <a href="#"><p id="playerNickname" onClick={this.handleClick} className="player-info">{this.props.player.nickname}</p></a>
+                <a href="#"><p id="playerKills" onClick={this.handleClick} className="player-info">{this.props.player.kills}</p></a>
+                <a href="#"><p id="playerTeam" onClick={this.handleClick} className="player-info">{this.props.player.team}</p></a>
+            </div>
+        );
     }
 }
 

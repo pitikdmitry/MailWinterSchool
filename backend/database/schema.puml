@@ -7,26 +7,18 @@ player: surname [TEXT]
 player: about [TEXT]
 player: email [TEXT]
 player: password [TEXT]
-player: country [TEXT]
+player: kills [INT]
+player: deaths [INT]
 
-player: stats_id [INT]
 player: team_id [INT]
 player --> stats
 player --> team
-
-stats: stats_id [INT]
-stats: kills [INT]
-stats: deaths [INT]
-stats: games_win [INT]
-stats: games_lose [INT]
-stats: games_draw [INT]
 
 team: team_id [INT]
 team: title [TEXT]
 team: games_win [INT]
 team: games_lose [INT]
 team: games_draw [INT]
-team: country [TEXT]
 
 game: game_id [INT]
 game: team_1_id [INT]

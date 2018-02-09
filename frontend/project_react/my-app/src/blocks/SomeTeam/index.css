@@ -1,0 +1,42 @@
+#team-players {
+    /*display: none;*/
+    color: antiquewhite;
+}
+#team-players {
+    width: 60%;
+    float: left;
+    margin-top: 20px;
+    margin-left: 25%;
+    border-top: 3px #db6e6e;
+    border-left: 3px #db6e6e;
+
+}
+
+#main-name-team{
+    color: rgb(235, 81, 81);
+}
+
+.left{
+    float: left;
+    margin-right: 20%;
+    font-size: 1.3em;
+    margin-top: 5px;
+
+}
+.right{
+    float:left;
+    font-size: 1.3em;
+    margin-top: 5px;
+
+}
+.statistics{
+    float: left;
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+#team-players p{
+    margin-top: 10px;
+}
+
+

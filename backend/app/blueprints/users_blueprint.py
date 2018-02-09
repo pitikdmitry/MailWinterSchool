@@ -29,7 +29,9 @@ def create():
     status_code = users_repository.create(data)
 
     if status_code == STATUS_CODE['OK']:
-        return get_by_nickname(data['nickname'])
+        data['kills'] = 0
+        data['deaths'] = 0
+        return jsonify(data)
 
     return make_response("", status_code)
 
@@ -37,7 +39,7 @@ def create():
 @users_blueprint.route('/login', methods=['POST'])
 @cross_origin()
 def login():
-    bytes_data = request.data
+    bytes_data = request.databest
     data = json.loads(bytes_data)
 
     user, status_code = users_repository.get_by_nickname_or_email(data['nickname_or_email'])

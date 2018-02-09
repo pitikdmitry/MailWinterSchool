@@ -17,6 +17,14 @@ class AppService {
     saveBestPlayers(players) {
         this.bestPlayers = players;
     }
+
+    getTeamByTitle(title) {
+        return this.Http.FetchGet('/teams/' + title + '/profile');
+    }
+
+    saveBestPlayers(players) {
+        this.bestPlayers = players;
+    }
 }
 
 export {AppService};

@@ -12,7 +12,6 @@ class HeaderLoggedIn extends Component {
 
     render() {
         if (this.props.isLoggedIn) {
-            debugger;
             return (
                 <div className="dropdown" id="profile-nav">
                     <button className="drop-btn">{this.props.nickname}</button>

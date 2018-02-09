@@ -25,7 +25,7 @@ class UserService {
 
     saveUser(data) {
         this.nickname = data.nickname;
-        this.user = new User(data.nickname, data.first_name, data.surname, data.about, data.email, data.password);
+        this.user = new User(data.nickname, data.first_name, data.surname, data.about, data.email, data.password, data.kills, data.deaths, data.team);
     }
 
     logout() {
@@ -37,6 +37,10 @@ class UserService {
         //     this.user;
         // }
         return this.Http.FetchGet('/users/' + this.nickname + '/profile')
+    }
+
+    getSomeUser(nickname) {
+        return this.Http.FetchGet('/users/' + nickname + '/profile')
     }
 
     returnData() {

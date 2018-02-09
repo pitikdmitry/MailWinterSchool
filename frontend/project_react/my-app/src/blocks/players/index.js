@@ -3,6 +3,27 @@ import {Scoreboard} from './scoreboard/index.js';
 import './index.css';
 
 class Players extends Component {
+    constructor(props) {
+        super(props);
+        this.playerPosition = 1;
+
+        this.createElement = this.createElement.bind(this);
+        this.createElements = this.createElements.bind(this);
+
+    }
+
+   createElement(currentPlayer) {
+       let text =  <Scoreboard player={currentPlayer} playerPosition={this.playerPosition} callBack={this.props.callBack}/>
+       this.playerPosition += 1;
+       return text;
+   }
+
+   createElements(players) {
+       let val = players.map(this.createElement);
+       this.playerPosition = 1;
+       return val;
+   }
+
     render() {
         if (this.props.visibility) {
             return (
@@ -18,7 +39,7 @@ class Players extends Component {
                         <p id="player-team" className="player-info player-info-column-name"><span>Team</span></p>
                     </div>
                     <div className="clear"><br></br></div>
-                    <Scoreboard />
+                    {this.createElements(this.props.bestPlayers)}
                 </div>
             );
         } else {
