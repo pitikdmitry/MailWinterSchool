@@ -50,6 +50,13 @@ def login():
         return make_response("", STATUS_CODE['UNAUTHORIZED'])
 
 
+@users_blueprint.route('/best', methods=['GET'])
+def get_best_players():
+
+    users, status_code = users_repository.get_best_players()
+    return make_response(jsonify(users), status_code)
+
+
 @users_blueprint.route('/<nickname>/profile', methods=['GET'])
 def get_by_nickname(nickname: str):
 

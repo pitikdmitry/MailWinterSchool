@@ -5,6 +5,7 @@ class UserService {
     constructor() {
         this.user = null;
         this.users = [];
+        this.nickname = null;
         this.Http = Http;
     }
 
@@ -13,7 +14,7 @@ class UserService {
         return this.Http.FetchPost('/users/create', formdata);
     }
 
-    login(data, callback) {
+    login(data) {
         // this.Http.PostCORS('/login', {email, password}, callback);
         return this.Http.FetchPost('/users/login', data);
     }
@@ -23,6 +24,7 @@ class UserService {
     }
 
     saveUser(data) {
+        this.nickname = data.nickname;
         this.user = new User(data.nickname, data.first_name, data.surname, data.about, data.email, data.password);
     }
 
@@ -30,42 +32,15 @@ class UserService {
         this.user = null;
     }
 
-    getData(callback, force = false) {
-        if (this.isLoggedIn() && !force) {
-            return callback(null, this.user);
-        }
-
-        Http.GetCORS('/users/' + this.nickname + '/profile', function (err, userdata) {
-            if (err) {
-                return callback(err, userdata);
-            }
-            debugger;
-            this.user = new User(userdata['nickname'], userdata['first_name'], userdata['surname'],
-                userdata['about'], userdata['email'], userdata['password']);
-            this.nickname = userdata['nickname'];
-            callback(null, userdata);
-        }.bind(this));
+    getData() {
+        // if (this.isLoggedIn() && !force) {
+        //     this.user;
+        // }
+        return this.Http.FetchGet('/users/' + this.nickname + '/profile')
     }
 
-    loadUsersList(callback) {
-        Http.Get('/users', function (err, users) {
-            if (err) {
-                return callback(err, users);
-            }
-
-            this.users = users;
-
-            if (this.isLoggedIn()) {
-                this.users = this.users.map(user => {
-                    if (user.email === this.user.email) {
-                        user.me = true;
-                    }
-                    return user;
-                });
-            }
-
-            callback(null, this.users);
-        }.bind(this));
+    returnData() {
+        return this.user;
     }
 }
 

@@ -66,3 +66,20 @@ class UsersRepository:
         except BaseException as e:
             cursor.close()
             return None, STATUS_CODE['NOT_FOUND']
+
+    def get_best_players(self) -> Tuple:
+        connect, cursor = self._data_context.create_connection()
+
+        sql = "SELECT nickname, first_name, surname, about, email, password FROM users LIMIT 20;"
+        try:
+            cursor.execute(sql)
+            self._data_context.put_connection(connect)
+
+            users = cursor.fetchall()
+            cursor.close()
+
+            return users, STATUS_CODE['OK']
+
+        except BaseException as e:
+            cursor.close()
+            return None, STATUS_CODE['NOT_FOUND']

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {HeaderLoggedIn} from './logged_in/index.js';
+import {HeaderLoggedOut} from './logged_out/index.js';
 import './index.css';
 
 class Header extends Component {
@@ -25,26 +27,9 @@ class Header extends Component {
                     <a id="teams-btn" href="#" onClick={this.handleClick} title="Teams">Teams</a>
                     <a id="players-btn" href="#" onClick={this.handleClick} title="Players">Players</a>
                 </div>
+                <HeaderLoggedIn isLoggedIn={this.props.isLoggedIn} nickname={this.props.nickname} callBack={this.props.callBack}/>
+                <HeaderLoggedOut isLoggedIn={this.props.isLoggedIn} callBack={this.props.callBack}/>
 
-                <div id="reg-auth">
-                    <a href="#" title="Sign-In">
-                        <div id="signIn-btn" onClick={this.handleClick} className="auth-btn">
-                            Sign In
-                        </div>
-                    </a>
-                    <a href="#" title="Registration">
-                        <div id="registration-btn" onClick={this.handleClick} className="auth-btn">
-                            Registration
-                        </div>
-                    </a>
-                </div>
-                <div className="dropdown" id="profile-nav">
-                    <button className="drop-btn">Nickname</button>
-                    <div className="dropdown-content">
-                        <a id='profile-btn' href="#" onClick={this.handleClick}>Profile</a>
-                        <a id='logout-btn' href="#" onClick={this.handleClick}>Logout</a>
-                    </div>
-                </div>
                 <div id="clear-navigation"></div>
 
                 <div id="mobileMenu">

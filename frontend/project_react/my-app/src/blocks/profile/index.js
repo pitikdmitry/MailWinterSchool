@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import './index.css';
+import {User} from '../../models/user.js';
 
 class Profile extends Component {
     constructor(props) {
         super(props);
+        this.user = null;
     }
 
     render() {
         if (this.props.visibility) {
+            this.user = this.props.user;
             return (
                 <div id="player-profile">
                     <div id="profile-left">
@@ -33,11 +36,11 @@ class Profile extends Component {
                             <p>Password:</p>
                         </div>
                         <div id="info-value" className="info">
-                            <p>{this.props.user.nickname}</p>
-                            <p>{this.props.user.name}</p>
-                            <p>{this.props.user.surname}</p>
-                            <p>{this.props.user.email}</p>
-                            <p>{this.props.user.password}</p>
+                            <p>{this.user.nickname()}</p>
+                            <p>{this.user.firstName()}</p>
+                            <p>{this.user.surname()}</p>
+                            <p>{this.user.email()}</p>
+                            <p>{this.user.password()}</p>
                         </div>
                     </div>
                 </div>

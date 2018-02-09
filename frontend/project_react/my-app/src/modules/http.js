@@ -18,7 +18,6 @@ class Http {
 
             let response = null;
             try {
-                debugger;
                 response = JSON.parse(xhr.responseText);
             } catch (err) {
 
@@ -36,7 +35,6 @@ class Http {
     static PostCORS(address, body, callback) {
         let BaseUrl = 'http://localhost:5000';
         let XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
-        debugger;
         console.log(BaseUrl + address);
         let xhr = new XHR();
         xhr.open('POST', BaseUrl + address, true);
@@ -79,7 +77,6 @@ class Http {
             });
     }
     static FetchPost(address, body) {
-        debugger;
         let BaseUrl = 'http://localhost:5000';
         const url = BaseUrl + address;
         return fetch(url, {
@@ -92,7 +89,6 @@ class Http {
             }
         })
             .then(function (response) {
-                debugger;
                 if (response.status >= 400) {
                     throw response;
                 }

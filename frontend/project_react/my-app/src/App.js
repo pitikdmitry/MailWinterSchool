@@ -4,15 +4,19 @@ import {Header} from './blocks/header/index.js';
 import {Footer} from './blocks/footer/index.js';
 import {Profile} from './blocks/profile/index.js';
 import {Registration} from './blocks/registration/index.js';
-import {SignIn} from "./blocks/signIn";
+import {SignIn} from "./blocks/signIn/index.js";
+import {Players} from "./blocks/players/index.js";
 import {UserService} from "./services/user-service.js";
+import {AppService} from "./services/app-service.js";
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.userService = new UserService();
+        this.appService = new AppService();
         this.state = {
-            header: true,
+            isLoggedIn: false,
+            nickname: null,
             news: false,
             tournament: false,
             games: false,
@@ -24,7 +28,7 @@ class App extends Component {
             logout: false
         };
 
-        this.handleClickRegistration = this.handleClickRegistration.bind(this);
+        this.handleRegistration = this.handleRegistration.bind(this);
     }
 
     hideAll() {
@@ -47,25 +51,50 @@ class App extends Component {
 
     showProfile() {
         this.hideAll();
-        this.setState({
-            profile: true
-        });
+        if(this.userService.isLoggedIn()) {
+            this.userService.getData()
+                .then(function(data) {
+                    this.userService.saveUser(data);
+                }.bind(this))
+                .catch((err) => alert(`Some error ${err.status}: ${err.responseText}`));
+            this.setState({
+                profile: true
+            });
+        }
     }
 
     showRegistration() {
         this.hideAll();
         this.setState({
-            registration: true,
+            registration: true
         });
     }
 
     showSignIn() {
         this.hideAll();
         this.setState({
-            signIn: true,
+            signIn: true
         });
     }
 
+    logout() {
+        this.userService.logout();
+        this.setState({
+            isLoggedIn: false
+        });
+        this.showNews();
+    }
+
+    showPlayers() {
+        this.hideAll();
+        this.appService.getBestPlayers()
+            .then(function(players) {
+                this.appService.saveBestPlayers(players);
+            }.bind(this));
+        this.setState({
+            players: true
+        });
+    }
     handleClick = (buttonId) => {
         switch(buttonId) {
             case 'news-btn':
@@ -80,7 +109,7 @@ class App extends Component {
 
                 break;
             case 'players-btn':
-
+                this.showPlayers();
                 break;
             case 'registration-btn':
                 this.showRegistration();
@@ -92,7 +121,7 @@ class App extends Component {
                 this.showProfile();
                 break;
             case 'logout-btn':
-
+                this.logout();
                 break;
             default:
 
@@ -100,17 +129,20 @@ class App extends Component {
         }
     }
 
-    handleClickRegistration(data) {
+    handleRegistration(data) {
         if (this.userService.isLoggedIn()) {
             this.showNews();
         }
         this.userService.register(data)
             .then(function (data) {
-                debugger;
                 this.showNews();
                 this.userService.saveUser(data);
             }.bind(this))
             .catch((err) => alert(`Some error ${err.status}: ${err.responseText}`));
+        this.setState({
+            nickname: data.nickname,
+            isLoggedIn: true
+        });
     }
 
     handleSignIn = (data) => {
@@ -119,28 +151,28 @@ class App extends Component {
         }
         this.userService.login(data)
             .then(function (data) {
-                debugger;
                 this.showNews();
                 this.userService.saveUser(data);
             }.bind(this))
             .catch((err) => alert(`Some error ${err.status}: ${err.responseText}`));
+
+        this.setState({
+            nickname: data.nickname_or_email,
+            isLoggedIn: true
+        });
+        debugger;
     }
 
     render() {
-        var user_1 = {
-            nickname: "nick",
-            name: "name",
-            surname: "surn",
-            email: "@yandex.ru",
-            password: "123"
-        };
+
         return (
             <div id="App">
                 <div id="content">
-                    <Header visibility={this.state.header} callBack={this.handleClick}/>
-                    <Profile user={user_1} visibility={this.state.profile}/>
-                    <Registration visibility={this.state.registration} callBack={this.handleClickRegistration}/>
+                    <Header isLoggedIn={this.state.isLoggedIn} nickname={this.state.nickname} callBack={this.handleClick}/>
+                    <Profile user={this.userService.returnData()} visibility={this.state.profile}/>
+                    <Registration visibility={this.state.registration} callBack={this.handleRegistration}/>
                     <SignIn visibility={this.state.signIn} callBack={this.handleSignIn}/>
+                    <Players visibility={this.state.players} bestPlayers={this.appService.returnBestPlayers()}/>
                 </div>
                 <Footer/>
             </div>
